@@ -1,0 +1,13 @@
+# Get User List
+
+mutation CreateOne($id: Int!, $name: String!, $email: String!){
+  userCreateOne(record:{
+    name: "test",
+    email: "test@test.com",
+    password: "test",
+  }
+  ){record{
+     _id, name, email
+  }
+  }
+}

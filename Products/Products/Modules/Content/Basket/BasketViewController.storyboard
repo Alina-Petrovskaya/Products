@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Basket View Controller-->
+        <scene sceneID="Tch-OX-QMb">
+            <objects>
+                <viewController storyboardIdentifier="BasketViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Pr-wL-o9c" customClass="BasketViewController" customModule="Products" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nxX-st-VfO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qvn-KB-1Jc" customClass="DiffableTableView" customModule="Products" customModuleProvider="target">
+                                <rect key="frame" x="30" y="44" width="354" height="728"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kx-1u-lOn" customClass="CustomButton" customModule="Products" customModuleProvider="target">
+                                <rect key="frame" x="30" y="782" width="354" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="A31-Y2-nDq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="obz-vg-6gD"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Bye">
+                                    <fontDescription key="titleFontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="byeButtonTapped:" destination="0Pr-wL-o9c" eventType="touchUpInside" id="r7K-JK-qqu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QEw-kP-ukZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Kx-1u-lOn" firstAttribute="leading" secondItem="QEw-kP-ukZ" secondAttribute="leading" constant="30" id="Cn3-v6-1QJ"/>
+                            <constraint firstItem="qvn-KB-1Jc" firstAttribute="leading" secondItem="QEw-kP-ukZ" secondAttribute="leading" constant="30" id="FCb-zJ-fuF"/>
+                            <constraint firstItem="qvn-KB-1Jc" firstAttribute="top" secondItem="QEw-kP-ukZ" secondAttribute="top" id="N1Q-k5-Be7"/>
+                            <constraint firstItem="6Kx-1u-lOn" firstAttribute="top" secondItem="qvn-KB-1Jc" secondAttribute="bottom" constant="10" id="Pal-ch-psN"/>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="trailing" secondItem="qvn-KB-1Jc" secondAttribute="trailing" constant="30" id="Qxq-Ow-iri"/>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="trailing" secondItem="6Kx-1u-lOn" secondAttribute="trailing" constant="30" id="Vrz-u2-MiJ"/>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="bottom" secondItem="6Kx-1u-lOn" secondAttribute="bottom" constant="20" id="btD-Rt-vOC"/>
+                            <constraint firstItem="6Kx-1u-lOn" firstAttribute="top" secondItem="qvn-KB-1Jc" secondAttribute="bottom" constant="10" id="y9f-9e-WAt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="byeButton" destination="6Kx-1u-lOn" id="wBu-Ha-0wh"/>
+                        <outlet property="tableView" destination="qvn-KB-1Jc" id="oms-LF-OLy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFy-u0-vvV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="3"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

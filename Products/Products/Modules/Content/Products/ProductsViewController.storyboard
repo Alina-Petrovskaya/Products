@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Products View Controller-->
+        <scene sceneID="Tch-OX-QMb">
+            <objects>
+                <viewController storyboardIdentifier="ProductsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Pr-wL-o9c" customClass="ProductsViewController" customModule="Products" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nxX-st-VfO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NMK-aS-fOK" customClass="DiffableTableView" customModule="Products" customModuleProvider="target">
+                                <rect key="frame" x="30" y="44" width="354" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efv-e2-Yz5">
+                                <rect key="frame" x="327" y="775" width="67" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="efv-e2-Yz5" secondAttribute="height" multiplier="1 : 1" id="EZB-dX-Ozh"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addProductTapped:" destination="0Pr-wL-o9c" eventType="touchUpInside" id="zIZ-vo-CZf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QEw-kP-ukZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="trailing" secondItem="NMK-aS-fOK" secondAttribute="trailing" constant="30" id="1UA-6s-ljZ"/>
+                            <constraint firstItem="efv-e2-Yz5" firstAttribute="width" secondItem="nxX-st-VfO" secondAttribute="width" multiplier="0.161836" id="1Wh-43-gf4"/>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="bottom" secondItem="NMK-aS-fOK" secondAttribute="bottom" id="M3f-F4-CPL"/>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="bottom" secondItem="efv-e2-Yz5" secondAttribute="bottom" constant="20" id="U0M-gy-I2r"/>
+                            <constraint firstItem="NMK-aS-fOK" firstAttribute="top" secondItem="QEw-kP-ukZ" secondAttribute="top" id="VWg-2n-5Hp"/>
+                            <constraint firstItem="NMK-aS-fOK" firstAttribute="leading" secondItem="QEw-kP-ukZ" secondAttribute="leading" constant="30" id="cJ9-6A-vrP"/>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="trailing" secondItem="efv-e2-Yz5" secondAttribute="trailing" constant="20" id="gpG-pR-Ru6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addProduct" destination="efv-e2-Yz5" id="FtZ-Ht-9fK"/>
+                        <outlet property="tableView" destination="NMK-aS-fOK" id="dcg-je-HQR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFy-u0-vvV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="3"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

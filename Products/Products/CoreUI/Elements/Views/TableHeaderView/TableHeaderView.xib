@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableHeaderView" customModule="Products" customModuleProvider="target">
+            <connections>
+                <outlet property="title" destination="cYn-CY-BMo" id="igs-bh-Qu6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ag1-Wh-9wB">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-CY-BMo">
+                            <rect key="frame" x="0.0" y="15" width="400" height="170"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="cYn-CY-BMo" firstAttribute="top" secondItem="ag1-Wh-9wB" secondAttribute="top" constant="15" id="RfK-9H-vTI"/>
+                        <constraint firstAttribute="bottom" secondItem="cYn-CY-BMo" secondAttribute="bottom" constant="15" id="bhc-mh-LyM"/>
+                        <constraint firstAttribute="trailing" secondItem="cYn-CY-BMo" secondAttribute="trailing" id="fZ8-uj-hgl"/>
+                        <constraint firstItem="cYn-CY-BMo" firstAttribute="leading" secondItem="ag1-Wh-9wB" secondAttribute="leading" id="qTf-Ac-lnW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="ag1-Wh-9wB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3ZL-bB-xxe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ag1-Wh-9wB" secondAttribute="bottom" id="QQ9-V6-6hr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ag1-Wh-9wB" secondAttribute="trailing" id="dnB-Jy-2SL"/>
+                <constraint firstItem="ag1-Wh-9wB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fMF-YQ-c0L"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="307.03125"/>
+        </view>
+    </objects>
+</document>

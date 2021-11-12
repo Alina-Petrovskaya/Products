@@ -32,7 +32,7 @@ class OrderTotalCell: UITableViewCell {
 
     // MARK: - Public methods
     func configure(with viewModel: OrderTotalViewModelProtocol) {
-        total.text = "Tital: \(viewModel.total)"
+        total.text = "Total: \(viewModel.total)"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

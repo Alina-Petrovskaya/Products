@@ -22,6 +22,11 @@ class TabBarViewController: UITabBarController, TabBarPresenterDelegate {
         super.viewDidLoad()
         setupTabBar()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
 
     // MARK: - IBActions
 

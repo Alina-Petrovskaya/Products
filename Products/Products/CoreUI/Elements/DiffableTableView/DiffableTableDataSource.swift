@@ -36,6 +36,10 @@ class DiffableTableDataSource: UITableViewDiffableDataSource<AnyHashable, AnyHas
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         delegate?.configureHeader(for: tableView, in: section)
     }
+    
+    func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        delegate?.updateEditing(tableView, willBeginEditingRowAt: indexPath)
+    }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension

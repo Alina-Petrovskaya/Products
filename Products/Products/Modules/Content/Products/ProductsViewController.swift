@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - ProductsViewController
-class ProductsViewController: UIViewController, ProductsPresenterDelegate, DiffableTableUpdateProtocol {
+class ProductsViewController: UIViewController, ProductsPresenterDelegate, DiffableTableUpdateProtocol, HudViewProtocol {
 
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: DiffableTableView!
@@ -22,19 +22,26 @@ class ProductsViewController: UIViewController, ProductsPresenterDelegate, Diffa
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        showHud("", to: view)
         presenter.prepareTable()
         addProduct.setBackgroundGradient(addProduct.bounds.height / 2)
         addProduct.layer.cornerRadius = addProduct.bounds.height / 2
+        let shadowColor = ColorConstant.darkBlueBackground.getColor().withAlphaComponent(0.4)
+        addProduct.layer.shadowColor = shadowColor.cgColor
+        addProduct.layer.shadowRadius = 20
     }
 
     // MARK: - IBActions
     @IBAction func addProductTapped(_ sender: UIButton) {
-        let addProductVC = ProductAddConfigurator().configure()
+        let addProductVC = ProductAddConfigurator().configure(productCreationDelegate: presenter)
         present(addProductVC, animated: true)
     }
 
     // MARK: - Private methods
 
     // MARK: - Public methods
+    func hideProgress(with result: HudResult) {
+        showResult(from: view, result: result)
+    }
 
 }

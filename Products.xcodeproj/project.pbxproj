@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842D1DB3273BFEBF00080E9C /* KeyboardStateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DB2273BFEBF00080E9C /* KeyboardStateObserver.swift */; };
+		842D1DB5273C0D3100080E9C /* ProductSwipeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DB4273C0D3100080E9C /* ProductSwipeConfigurator.swift */; };
+		842D1DB7273C11F400080E9C /* TableViewCell+SwipeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DB6273C11F400080E9C /* TableViewCell+SwipeStyle.swift */; };
+		842D1DC4273D20FD00080E9C /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 842D1DC3273D20FD00080E9C /* Apollo */; };
+		842D1DC6273D20FD00080E9C /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 842D1DC5273D20FD00080E9C /* ApolloAPI */; };
+		842D1DC8273D20FD00080E9C /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 842D1DC7273D20FD00080E9C /* ApolloCodegenLib */; };
+		842D1DCA273D20FD00080E9C /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 842D1DC9273D20FD00080E9C /* ApolloSQLite */; };
+		842D1DCC273D20FD00080E9C /* ApolloUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 842D1DCB273D20FD00080E9C /* ApolloUtils */; };
+		842D1DCE273D20FD00080E9C /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 842D1DCD273D20FD00080E9C /* ApolloWebSocket */; };
+		842D1DD0273D7C3B00080E9C /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DCF273D7C3A00080E9C /* ListModel.swift */; };
+		842D1DD2273E75D000080E9C /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DD1273E75D000080E9C /* ProfileModel.swift */; };
+		842D1DD4273E88D500080E9C /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DD3273E88D400080E9C /* Date+String.swift */; };
+		8462CD9B273A652000535CD5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CD9A273A651F00535CD5 /* NetworkManager.swift */; };
+		8462CD9D273A754300535CD5 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CD9C273A754300535CD5 /* NetworkInterceptorProvider.swift */; };
+		8462CD9F273A758200535CD5 /* CustomInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CD9E273A758200535CD5 /* CustomInterceptor.swift */; };
+		8462CDA1273A835E00535CD5 /* GraphQlCustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CDA0273A835E00535CD5 /* GraphQlCustomError.swift */; };
+		8462CDA3273A93A200535CD5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CDA2273A93A200535CD5 /* API.swift */; };
+		8462CDAC273BC65300535CD5 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CDAB273BC65300535CD5 /* ValidationService.swift */; };
 		849B0F9D272AB464003761FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B0F9C272AB464003761FA /* AppDelegate.swift */; };
 		849B0F9F272AB464003761FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B0F9E272AB464003761FA /* SceneDelegate.swift */; };
 		849B0FA6272AB468003761FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B0FA5272AB468003761FA /* Assets.xcassets */; };
@@ -64,12 +82,6 @@
 		849B10AB272BF0BE003761FA /* TableHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B10A8272BF0BE003761FA /* TableHeaderViewModel.swift */; };
 		849B10AE272BF1CE003761FA /* ProductsTableViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B10AD272BF1CE003761FA /* ProductsTableViewConfigurator.swift */; };
 		849B10B0272BF1E5003761FA /* TableView+DequeueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B10AF272BF1E5003761FA /* TableView+DequeueCell.swift */; };
-		849B10BC272C2DED003761FA /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 849B10BB272C2DED003761FA /* Apollo */; };
-		849B10BE272C2DED003761FA /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 849B10BD272C2DED003761FA /* ApolloAPI */; };
-		849B10C0272C2DED003761FA /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 849B10BF272C2DED003761FA /* ApolloCodegenLib */; };
-		849B10C2272C2DED003761FA /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 849B10C1272C2DED003761FA /* ApolloSQLite */; };
-		849B10C4272C2DED003761FA /* ApolloUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 849B10C3272C2DED003761FA /* ApolloUtils */; };
-		849B10C6272C2DED003761FA /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 849B10C5272C2DED003761FA /* ApolloWebSocket */; };
 		849B10CA272C2F9C003761FA /* Query.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 849B10C9272C2F9C003761FA /* Query.graphql */; };
 		849B10D9272C4354003761FA /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B10D2272C4353003761FA /* BasketViewModel.swift */; };
 		849B10DA272C4354003761FA /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849B10D3272C4353003761FA /* BasketCell.xib */; };
@@ -78,9 +90,38 @@
 		849B10DD272C4354003761FA /* OrderTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849B10D7272C4354003761FA /* OrderTotalCell.xib */; };
 		849B10DE272C4354003761FA /* OrderTotalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B10D8272C4354003761FA /* OrderTotalViewModel.swift */; };
 		84C8E157272C946F00A902C8 /* BasketTableViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E156272C946F00A902C8 /* BasketTableViewConfigurator.swift */; };
+		84C8E15A272D303800A902C8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E159272D303700A902C8 /* ImagePicker.swift */; };
+		84C8E15D272D353B00A902C8 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 84C8E15C272D353B00A902C8 /* MBProgressHUD */; };
+		84C8E15F272D35E800A902C8 /* HudViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E15E272D35E800A902C8 /* HudViewProtocol.swift */; };
+		84C8E161272D49EC00A902C8 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E160272D49EC00A902C8 /* ProductModel.swift */; };
+		84C8E163272D4A6A00A902C8 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E162272D4A6A00A902C8 /* OrderModel.swift */; };
+		84C8E165272D4ACE00A902C8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E164272D4ACE00A902C8 /* UserModel.swift */; };
+		84C8E169272D4B8C00A902C8 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84C8E168272D4B8C00A902C8 /* KeychainSwift */; };
+		84C8E16B272D4BB000A902C8 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E16A272D4BB000A902C8 /* KeychainManager.swift */; };
+		84C8E16E272D4C0300A902C8 /* KeyChainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E16D272D4C0300A902C8 /* KeyChainKeys.swift */; };
+		84C8E177272D4FF200A902C8 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E173272D4FF200A902C8 /* UserProfileViewController.swift */; };
+		84C8E178272D4FF200A902C8 /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E174272D4FF200A902C8 /* UserProfilePresenter.swift */; };
+		84C8E179272D4FF200A902C8 /* UserProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E175272D4FF200A902C8 /* UserProfileConfigurator.swift */; };
+		84C8E17A272D4FF200A902C8 /* UserProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C8E176272D4FF200A902C8 /* UserProfileViewController.storyboard */; };
+		84C8E181272D513B00A902C8 /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E17E272D513B00A902C8 /* UserInfoViewModel.swift */; };
+		84C8E182272D513B00A902C8 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E17F272D513B00A902C8 /* UserInfoCell.swift */; };
+		84C8E183272D513B00A902C8 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C8E180272D513B00A902C8 /* UserInfoCell.xib */; };
+		84C8E186272D543800A902C8 /* UserTableViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E185272D543800A902C8 /* UserTableViewConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		842D1DB2273BFEBF00080E9C /* KeyboardStateObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardStateObserver.swift; sourceTree = "<group>"; };
+		842D1DB4273C0D3100080E9C /* ProductSwipeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSwipeConfigurator.swift; sourceTree = "<group>"; };
+		842D1DB6273C11F400080E9C /* TableViewCell+SwipeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableViewCell+SwipeStyle.swift"; sourceTree = "<group>"; };
+		842D1DCF273D7C3A00080E9C /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		842D1DD1273E75D000080E9C /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		842D1DD3273E88D400080E9C /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		8462CD9A273A651F00535CD5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8462CD9C273A754300535CD5 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
+		8462CD9E273A758200535CD5 /* CustomInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInterceptor.swift; sourceTree = "<group>"; };
+		8462CDA0273A835E00535CD5 /* GraphQlCustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQlCustomError.swift; sourceTree = "<group>"; };
+		8462CDA2273A93A200535CD5 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8462CDAB273BC65300535CD5 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		849B0F99272AB464003761FA /* Products.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Products.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849B0F9C272AB464003761FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849B0F9E272AB464003761FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +188,21 @@
 		849B10D7272C4354003761FA /* OrderTotalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderTotalCell.xib; sourceTree = "<group>"; };
 		849B10D8272C4354003761FA /* OrderTotalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTotalViewModel.swift; sourceTree = "<group>"; };
 		84C8E156272C946F00A902C8 /* BasketTableViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewConfigurator.swift; sourceTree = "<group>"; };
+		84C8E159272D303700A902C8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		84C8E15E272D35E800A902C8 /* HudViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudViewProtocol.swift; sourceTree = "<group>"; };
+		84C8E160272D49EC00A902C8 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		84C8E162272D4A6A00A902C8 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		84C8E164272D4ACE00A902C8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		84C8E16A272D4BB000A902C8 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		84C8E16D272D4C0300A902C8 /* KeyChainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKeys.swift; sourceTree = "<group>"; };
+		84C8E173272D4FF200A902C8 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		84C8E174272D4FF200A902C8 /* UserProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
+		84C8E175272D4FF200A902C8 /* UserProfileConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileConfigurator.swift; sourceTree = "<group>"; };
+		84C8E176272D4FF200A902C8 /* UserProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfileViewController.storyboard; sourceTree = "<group>"; };
+		84C8E17E272D513B00A902C8 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
+		84C8E17F272D513B00A902C8 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
+		84C8E180272D513B00A902C8 /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
+		84C8E185272D543800A902C8 /* UserTableViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,19 +210,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849B10BE272C2DED003761FA /* ApolloAPI in Frameworks */,
+				84C8E169272D4B8C00A902C8 /* KeychainSwift in Frameworks */,
+				842D1DCA273D20FD00080E9C /* ApolloSQLite in Frameworks */,
+				842D1DC8273D20FD00080E9C /* ApolloCodegenLib in Frameworks */,
+				842D1DCC273D20FD00080E9C /* ApolloUtils in Frameworks */,
+				842D1DC4273D20FD00080E9C /* Apollo in Frameworks */,
 				849B1014272ABC62003761FA /* SDWebImage in Frameworks */,
-				849B10C2272C2DED003761FA /* ApolloSQLite in Frameworks */,
-				849B10BC272C2DED003761FA /* Apollo in Frameworks */,
-				849B10C6272C2DED003761FA /* ApolloWebSocket in Frameworks */,
-				849B10C0272C2DED003761FA /* ApolloCodegenLib in Frameworks */,
-				849B10C4272C2DED003761FA /* ApolloUtils in Frameworks */,
+				84C8E15D272D353B00A902C8 /* MBProgressHUD in Frameworks */,
+				842D1DCE273D20FD00080E9C /* ApolloWebSocket in Frameworks */,
+				842D1DC6273D20FD00080E9C /* ApolloAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8462CDAA273BC64200535CD5 /* ValidationService */ = {
+			isa = PBXGroup;
+			children = (
+				8462CDAB273BC65300535CD5 /* ValidationService.swift */,
+			);
+			path = ValidationService;
+			sourceTree = "<group>";
+		};
 		849B0F90272AB464003761FA = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +313,11 @@
 		849B100E272ABADA003761FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				842D1DD1273E75D000080E9C /* ProfileModel.swift */,
+				842D1DCF273D7C3A00080E9C /* ListModel.swift */,
+				84C8E164272D4ACE00A902C8 /* UserModel.swift */,
+				84C8E162272D4A6A00A902C8 /* OrderModel.swift */,
+				84C8E160272D49EC00A902C8 /* ProductModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,7 +334,9 @@
 		849B1010272ABAF1003761FA /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				84C8E158272D302400A902C8 /* ImagePicker */,
 				849B1077272AF6F1003761FA /* TabBar */,
+				84C8E172272D4FF200A902C8 /* UserProfile */,
 				849B106D272AF6F1003761FA /* Basket */,
 				849B1072272AF6F1003761FA /* ProductAdd */,
 				849B107C272AF6F1003761FA /* Products */,
@@ -274,6 +347,9 @@
 		849B1011272ABAFC003761FA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8462CDAA273BC64200535CD5 /* ValidationService */,
+				84C8E16F272D4FA900A902C8 /* NetworkManager */,
+				84C8E16C272D4BB800A902C8 /* KeychainManager */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -304,6 +380,8 @@
 		849B1030272AC22F003761FA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				842D1DD3273E88D400080E9C /* Date+String.swift */,
+				842D1DB6273C11F400080E9C /* TableViewCell+SwipeStyle.swift */,
 				849B10AF272BF1E5003761FA /* TableView+DequeueCell.swift */,
 				849B1061272AED25003761FA /* UIViewController+KeyBoard.swift */,
 				849B105D272AE8F9003761FA /* UITextField+View.swift */,
@@ -424,6 +502,7 @@
 		849B1092272BD725003761FA /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				84C8E17D272D513B00A902C8 /* UserInfoCell */,
 				849B10D1272C4353003761FA /* BasketCell */,
 				849B10D5272C4354003761FA /* OrderTotalCell */,
 				849B1095272BD80A003761FA /* ProductCell */,
@@ -444,6 +523,8 @@
 		849B109E272BF01E003761FA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				842D1DB2273BFEBF00080E9C /* KeyboardStateObserver.swift */,
+				84C8E15E272D35E800A902C8 /* HudViewProtocol.swift */,
 				849B109F272BF033003761FA /* NibLoadable.swift */,
 			);
 			path = Protocols;
@@ -479,6 +560,7 @@
 			isa = PBXGroup;
 			children = (
 				849B10AD272BF1CE003761FA /* ProductsTableViewConfigurator.swift */,
+				842D1DB4273C0D3100080E9C /* ProductSwipeConfigurator.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -486,6 +568,7 @@
 		849B10B1272C20D7003761FA /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				8462CDA2273A93A200535CD5 /* API.swift */,
 				849B10C9272C2F9C003761FA /* Query.graphql */,
 			);
 			path = GraphQL;
@@ -519,6 +602,64 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		84C8E158272D302400A902C8 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				84C8E159272D303700A902C8 /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		84C8E16C272D4BB800A902C8 /* KeychainManager */ = {
+			isa = PBXGroup;
+			children = (
+				84C8E16D272D4C0300A902C8 /* KeyChainKeys.swift */,
+				84C8E16A272D4BB000A902C8 /* KeychainManager.swift */,
+			);
+			path = KeychainManager;
+			sourceTree = "<group>";
+		};
+		84C8E16F272D4FA900A902C8 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				8462CD9A273A651F00535CD5 /* NetworkManager.swift */,
+				8462CD9C273A754300535CD5 /* NetworkInterceptorProvider.swift */,
+				8462CD9E273A758200535CD5 /* CustomInterceptor.swift */,
+				8462CDA0273A835E00535CD5 /* GraphQlCustomError.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		84C8E172272D4FF200A902C8 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				84C8E184272D541500A902C8 /* TableView */,
+				84C8E173272D4FF200A902C8 /* UserProfileViewController.swift */,
+				84C8E174272D4FF200A902C8 /* UserProfilePresenter.swift */,
+				84C8E175272D4FF200A902C8 /* UserProfileConfigurator.swift */,
+				84C8E176272D4FF200A902C8 /* UserProfileViewController.storyboard */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		84C8E17D272D513B00A902C8 /* UserInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				84C8E17E272D513B00A902C8 /* UserInfoViewModel.swift */,
+				84C8E17F272D513B00A902C8 /* UserInfoCell.swift */,
+				84C8E180272D513B00A902C8 /* UserInfoCell.xib */,
+			);
+			path = UserInfoCell;
+			sourceTree = "<group>";
+		};
+		84C8E184272D541500A902C8 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				84C8E185272D543800A902C8 /* UserTableViewConfigurator.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -538,12 +679,14 @@
 			name = Products;
 			packageProductDependencies = (
 				849B1013272ABC62003761FA /* SDWebImage */,
-				849B10BB272C2DED003761FA /* Apollo */,
-				849B10BD272C2DED003761FA /* ApolloAPI */,
-				849B10BF272C2DED003761FA /* ApolloCodegenLib */,
-				849B10C1272C2DED003761FA /* ApolloSQLite */,
-				849B10C3272C2DED003761FA /* ApolloUtils */,
-				849B10C5272C2DED003761FA /* ApolloWebSocket */,
+				84C8E15C272D353B00A902C8 /* MBProgressHUD */,
+				84C8E168272D4B8C00A902C8 /* KeychainSwift */,
+				842D1DC3273D20FD00080E9C /* Apollo */,
+				842D1DC5273D20FD00080E9C /* ApolloAPI */,
+				842D1DC7273D20FD00080E9C /* ApolloCodegenLib */,
+				842D1DC9273D20FD00080E9C /* ApolloSQLite */,
+				842D1DCB273D20FD00080E9C /* ApolloUtils */,
+				842D1DCD273D20FD00080E9C /* ApolloWebSocket */,
 			);
 			productName = Products;
 			productReference = 849B0F99272AB464003761FA /* Products.app */;
@@ -575,7 +718,9 @@
 			mainGroup = 849B0F90272AB464003761FA;
 			packageReferences = (
 				849B1012272ABC62003761FA /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				849B10BA272C2DED003761FA /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				84C8E15B272D353B00A902C8 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				84C8E167272D4B8B00A902C8 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				842D1DC2273D20FD00080E9C /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = 849B0F9A272AB464003761FA /* Products */;
 			projectDirPath = "";
@@ -591,6 +736,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C8E17A272D4FF200A902C8 /* UserProfileViewController.storyboard in Resources */,
 				849B10A9272BF0BE003761FA /* TableHeaderView.xib in Resources */,
 				849B0FA9272AB468003761FA /* LaunchScreen.storyboard in Resources */,
 				849B10CA272C2F9C003761FA /* Query.graphql in Resources */,
@@ -600,6 +746,7 @@
 				849B108B272AF6F1003761FA /* TabBarViewController.storyboard in Resources */,
 				849B1060272AEC55003761FA /* Poppins-Regular.ttf in Resources */,
 				849B1056272AD72B003761FA /* SignInViewController.storyboard in Resources */,
+				84C8E183272D513B00A902C8 /* UserInfoCell.xib in Resources */,
 				849B10DA272C4354003761FA /* BasketCell.xib in Resources */,
 				849B1090272AF6F1003761FA /* ProductsViewController.storyboard in Resources */,
 				849B1053272AD72B003761FA /* LoginViewController.storyboard in Resources */,
@@ -630,7 +777,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Don't run this during index builds\n#if [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\n#while ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n#  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n#    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n #   exit 1\n # fi\n\n # DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\n#done\n\n# Grab a reference to the directory where scripts are checked out\n#SCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\n#if [ -z \"${SCRIPT_PATH}\" ]; then\n#    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to vyour project.\"\n#    exit 1\n#fi\n\n#cd \"${SRCROOT}/${TARGET_NAME}\"\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" Products/Resources/GraphQL/API.swift\n";
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to vyour project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\n# Download new schema\n# \"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download \\\n--header=\"APOLLO_USER: iO4z3C-2j3JHEUC8BIP1eQ\" \\\n--header=\"APOLLO_KEY: 3f585b27-32ab-4eee-95af-7292fcc74e38\" \\\n--header=\"content-type: application/json\" \\\n--endpoint=https://a5node-graphql-apollo.herokuapp.com/api/graphql \\\nschema.json\n\n# Create API file\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" Products/Resources/GraphQL/API.swift\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -639,25 +786,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8462CD9D273A754300535CD5 /* NetworkInterceptorProvider.swift in Sources */,
 				849B10AA272BF0BE003761FA /* TableHeaderView.swift in Sources */,
+				842D1DB7273C11F400080E9C /* TableViewCell+SwipeStyle.swift in Sources */,
 				849B1052272AD72B003761FA /* LoginPresenter.swift in Sources */,
 				849B1050272AD72B003761FA /* LoginConfigurator.swift in Sources */,
 				849B10AE272BF1CE003761FA /* ProductsTableViewConfigurator.swift in Sources */,
+				8462CD9F273A758200535CD5 /* CustomInterceptor.swift in Sources */,
 				849B108E272AF6F1003761FA /* ProductsPresenter.swift in Sources */,
 				849B1084272AF6F1003761FA /* BasketPresenter.swift in Sources */,
 				849B1055272AD72B003761FA /* SignInConfigurator.swift in Sources */,
 				849B10B0272BF1E5003761FA /* TableView+DequeueCell.swift in Sources */,
 				849B103A272AC35D003761FA /* RouterConfigurator.swift in Sources */,
+				8462CD9B273A652000535CD5 /* NetworkManager.swift in Sources */,
 				849B105E272AE8FA003761FA /* UITextField+View.swift in Sources */,
 				849B105A272ADCF5003761FA /* CustomButton.swift in Sources */,
 				849B1082272AF6F1003761FA /* BasketViewController.swift in Sources */,
 				849B1062272AED26003761FA /* UIViewController+KeyBoard.swift in Sources */,
 				849B1029272ABDE2003761FA /* DiffableTableSectionViewModel.swift in Sources */,
+				842D1DD2273E75D000080E9C /* ProfileModel.swift in Sources */,
+				842D1DB5273C0D3100080E9C /* ProductSwipeConfigurator.swift in Sources */,
 				849B1051272AD72B003761FA /* LoginViewController.swift in Sources */,
 				849B102D272ABDE2003761FA /* DiffableTableUpdateProtocol.swift in Sources */,
 				849B102C272ABDE2003761FA /* DiffableTableView.swift in Sources */,
 				849B103B272AC35D003761FA /* RouterViewController.swift in Sources */,
+				84C8E165272D4ACE00A902C8 /* UserModel.swift in Sources */,
+				84C8E182272D513B00A902C8 /* UserInfoCell.swift in Sources */,
 				849B10DE272C4354003761FA /* OrderTotalViewModel.swift in Sources */,
+				84C8E161272D49EC00A902C8 /* ProductModel.swift in Sources */,
 				849B1057272AD72B003761FA /* SignInViewController.swift in Sources */,
 				849B108F272AF6F1003761FA /* ProductsConfigurator.swift in Sources */,
 				849B108D272AF6F1003761FA /* ProductsViewController.swift in Sources */,
@@ -667,15 +823,26 @@
 				849B108C272AF6F1003761FA /* TabBarConfigurator.swift in Sources */,
 				849B103E272ACAF2003761FA /* UIView+Gradient.swift in Sources */,
 				849B1032272AC24B003761FA /* UIViewController+Instantiate.swift in Sources */,
+				8462CDA3273A93A200535CD5 /* API.swift in Sources */,
 				849B10DC272C4354003761FA /* OrderTotalCell.swift in Sources */,
+				84C8E177272D4FF200A902C8 /* UserProfileViewController.swift in Sources */,
 				849B1089272AF6F1003761FA /* TabBarPresenter.swift in Sources */,
 				849B1083272AF6F1003761FA /* BasketConfigurator.swift in Sources */,
+				8462CDA1273A835E00535CD5 /* GraphQlCustomError.swift in Sources */,
+				84C8E179272D4FF200A902C8 /* UserProfileConfigurator.swift in Sources */,
 				84C8E157272C946F00A902C8 /* BasketTableViewConfigurator.swift in Sources */,
 				849B10DB272C4354003761FA /* BasketCell.swift in Sources */,
+				84C8E163272D4A6A00A902C8 /* OrderModel.swift in Sources */,
+				84C8E178272D4FF200A902C8 /* UserProfilePresenter.swift in Sources */,
+				84C8E16B272D4BB000A902C8 /* KeychainManager.swift in Sources */,
 				849B103C272AC35D003761FA /* RouterPresenter.swift in Sources */,
+				84C8E15F272D35E800A902C8 /* HudViewProtocol.swift in Sources */,
 				849B1087272AF6F1003761FA /* ProductAddViewController.swift in Sources */,
+				842D1DB3273BFEBF00080E9C /* KeyboardStateObserver.swift in Sources */,
 				849B102B272ABDE2003761FA /* DiffableTableDelegate.swift in Sources */,
 				849B0F9D272AB464003761FA /* AppDelegate.swift in Sources */,
+				84C8E181272D513B00A902C8 /* UserInfoViewModel.swift in Sources */,
+				8462CDAC273BC65300535CD5 /* ValidationService.swift in Sources */,
 				849B1088272AF6F1003761FA /* ProductAddConfigurator.swift in Sources */,
 				849B0F9F272AB464003761FA /* SceneDelegate.swift in Sources */,
 				849B1086272AF6F1003761FA /* ProductAddPresenter.swift in Sources */,
@@ -684,6 +851,11 @@
 				849B102A272ABDE2003761FA /* DiffableTableDataSource.swift in Sources */,
 				849B10A0272BF033003761FA /* NibLoadable.swift in Sources */,
 				849B108A272AF6F1003761FA /* TabBarViewController.swift in Sources */,
+				84C8E186272D543800A902C8 /* UserTableViewConfigurator.swift in Sources */,
+				842D1DD0273D7C3B00080E9C /* ListModel.swift in Sources */,
+				84C8E15A272D303800A902C8 /* ImagePicker.swift in Sources */,
+				842D1DD4273E88D500080E9C /* Date+String.swift in Sources */,
+				84C8E16E272D4C0300A902C8 /* KeyChainKeys.swift in Sources */,
 				849B10D9272C4354003761FA /* BasketViewModel.swift in Sources */,
 				849B109B272BD80A003761FA /* ProductViewModel.swift in Sources */,
 			);
@@ -831,6 +1003,7 @@
 				INFOPLIST_FILE = Products/Products/Settings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -859,6 +1032,7 @@
 				INFOPLIST_FILE = Products/Products/Settings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -899,6 +1073,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		842D1DC2273D20FD00080E9C /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.49.0;
+			};
+		};
 		849B1012272ABC62003761FA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
@@ -907,51 +1089,69 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		849B10BA272C2DED003761FA /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+		84C8E15B272D353B00A902C8 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
+				minimumVersion = 1.0.0;
+			};
+		};
+		84C8E167272D4B8B00A902C8 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		842D1DC3273D20FD00080E9C /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842D1DC2273D20FD00080E9C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		842D1DC5273D20FD00080E9C /* ApolloAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842D1DC2273D20FD00080E9C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloAPI;
+		};
+		842D1DC7273D20FD00080E9C /* ApolloCodegenLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842D1DC2273D20FD00080E9C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloCodegenLib;
+		};
+		842D1DC9273D20FD00080E9C /* ApolloSQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842D1DC2273D20FD00080E9C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloSQLite;
+		};
+		842D1DCB273D20FD00080E9C /* ApolloUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842D1DC2273D20FD00080E9C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloUtils;
+		};
+		842D1DCD273D20FD00080E9C /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842D1DC2273D20FD00080E9C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
 		849B1013272ABC62003761FA /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 849B1012272ABC62003761FA /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		849B10BB272C2DED003761FA /* Apollo */ = {
+		84C8E15C272D353B00A902C8 /* MBProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 849B10BA272C2DED003761FA /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = Apollo;
+			package = 84C8E15B272D353B00A902C8 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
 		};
-		849B10BD272C2DED003761FA /* ApolloAPI */ = {
+		84C8E168272D4B8C00A902C8 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 849B10BA272C2DED003761FA /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = ApolloAPI;
-		};
-		849B10BF272C2DED003761FA /* ApolloCodegenLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 849B10BA272C2DED003761FA /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = ApolloCodegenLib;
-		};
-		849B10C1272C2DED003761FA /* ApolloSQLite */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 849B10BA272C2DED003761FA /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = ApolloSQLite;
-		};
-		849B10C3272C2DED003761FA /* ApolloUtils */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 849B10BA272C2DED003761FA /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = ApolloUtils;
-		};
-		849B10C5272C2DED003761FA /* ApolloWebSocket */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 849B10BA272C2DED003761FA /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = ApolloWebSocket;
+			package = 84C8E167272D4B8B00A902C8 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

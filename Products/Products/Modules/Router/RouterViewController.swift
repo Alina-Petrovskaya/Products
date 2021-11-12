@@ -21,12 +21,11 @@ class RouterViewController: UIViewController, RouterPresenterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        presenter.checkAuthState()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-       // presentAuth()
-       presentContent()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.checkAuthState()
     }
 
     // MARK: - IBActions
@@ -39,13 +38,17 @@ class RouterViewController: UIViewController, RouterPresenterDelegate {
 
     // MARK: - Public methods
     func presentAuth() {
-        navigationController?.pushViewController(SignInConfigurator().configure(),
-                                                 animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.pushViewController(SignInConfigurator().configure(),
+                                                     animated: true)
+        }
     }
 
     func presentContent() {
-        navigationController?.pushViewController(TabBarConfigurator().configure(),
-                                                 animated: true)
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.pushViewController(TabBarConfigurator().configure(),
+                                                     animated: true)
+        }
     }
 
 }

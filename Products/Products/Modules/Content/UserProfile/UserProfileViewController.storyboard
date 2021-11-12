@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Profile View Controller-->
+        <scene sceneID="Tch-OX-QMb">
+            <objects>
+                <viewController storyboardIdentifier="UserProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Pr-wL-o9c" customClass="UserProfileViewController" customModule="Products" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nxX-st-VfO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-Ec-kD5" customClass="DiffableTableView" customModule="Products" customModuleProvider="target">
+                                <rect key="frame" x="30" y="44" width="354" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDF-rN-a9l" customClass="CustomButton" customModule="Products" customModuleProvider="target">
+                                <rect key="frame" x="30" y="782" width="354" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="l6s-c4-8kP"/>
+                                    <constraint firstAttribute="height" constant="60" id="w9K-Z5-DTF"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                    <fontDescription key="titleFontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logiutTapped:" destination="0Pr-wL-o9c" eventType="touchUpInside" id="yuP-FY-gKb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QEw-kP-ukZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RDF-rN-a9l" firstAttribute="top" secondItem="4Ch-Ec-kD5" secondAttribute="bottom" constant="20" id="3QW-Bh-JHW"/>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="trailing" secondItem="RDF-rN-a9l" secondAttribute="trailing" constant="30" id="4tb-H3-KQ2"/>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="bottom" secondItem="RDF-rN-a9l" secondAttribute="bottom" constant="20" id="8Uc-ac-WJ0"/>
+                            <constraint firstItem="4Ch-Ec-kD5" firstAttribute="leading" secondItem="QEw-kP-ukZ" secondAttribute="leading" constant="30" id="TwI-Gc-j8y"/>
+                            <constraint firstItem="4Ch-Ec-kD5" firstAttribute="top" secondItem="QEw-kP-ukZ" secondAttribute="top" id="cLr-8o-uXw"/>
+                            <constraint firstItem="QEw-kP-ukZ" firstAttribute="trailing" secondItem="4Ch-Ec-kD5" secondAttribute="trailing" constant="30" id="psg-Ot-rOJ"/>
+                            <constraint firstItem="RDF-rN-a9l" firstAttribute="leading" secondItem="QEw-kP-ukZ" secondAttribute="leading" constant="30" id="tW2-pe-XcQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="4Ch-Ec-kD5" id="Vod-wO-Uus"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFy-u0-vvV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="3"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

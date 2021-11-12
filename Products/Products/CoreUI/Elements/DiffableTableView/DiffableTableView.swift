@@ -80,6 +80,7 @@ class DiffableTableView: UITableView {
     func delete(items: [AnyHashable]) {
         var snapshot = diffableDataSource.snapshot()
         snapshot.deleteItems(items)
+        diffableDataSource.apply(snapshot, animatingDifferences: true)
     }
 
 }

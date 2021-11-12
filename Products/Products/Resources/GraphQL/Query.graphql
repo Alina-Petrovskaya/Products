@@ -1,13 +1,88 @@
-# Get User List
-
-mutation CreateOne($id: Int!, $name: String!, $email: String!){
-  userCreateOne(record:{
-    name: "test",
-    email: "test@test.com",
-    password: "test",
-  }
-  ){record{
-     _id, name, email
-  }
+# ==========================================
+# Query
+query FindUser($findUserData2: InputFindUser!) {
+  findUser(data: $findUserData2) {
+    id
+    name
+    access_token
   }
 }
+
+query Login($loginData: InputLogin!) {
+  login(data: $loginData) {
+    id
+    name
+    access_token
+  }
+}
+
+query GetProductsUserId($data: InputID!) {
+  getProductsUserId(data: $data) {
+    _id
+    content
+    amount
+    create_at
+    isRemove
+    price
+    title
+  }
+}
+
+query GetOrdersUserId($data: InputOrderId!, $findUserData2: InputFindUser!) {
+
+  getOrdersUserId(data: $data) {
+    create_at
+    price
+    _id
+
+  }
+
+  findUser(data: $findUserData2) {
+    _id
+    access_token
+    id
+    email
+    name
+  }
+
+}
+  
+
+
+# ==========================================
+# Mutation
+mutation CreateUserMutation($data: InputCreateUser!){
+  createUser(data: $data) {
+    id
+    name
+    access_token
+  }
+}
+
+mutation CreateProduct($data: InputCreateProduct!) {
+  createProduct(data: $data) {
+    id
+    price
+    title
+    content
+    creator
+    isRemove
+    amount
+  }
+}
+
+mutation CreateOrder($data: InputCreateOrder!) {
+  createOrder(data: $data) {
+    create_at
+    price
+    _id
+    id
+    paid
+  }
+}
+
+
+
+
+
+

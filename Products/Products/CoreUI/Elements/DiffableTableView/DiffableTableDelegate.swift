@@ -33,6 +33,8 @@ protocol DiffableTableDelegate: AnyObject {
     func didSelectRow(at indexPath: IndexPath)
 
     func updateHeaderHeight(_ tableView: UITableView, at section: Int) -> CGFloat
+    
+    func updateEditing(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath)
 
 }
 
@@ -53,6 +55,8 @@ extension DiffableTableDelegate {
     func didSelectRow(at indexPath: IndexPath) { }
 
     func updateHeaderHeight(_ tableView: UITableView, at section: Int) -> CGFloat { 0.0 }
+    
+    func updateEditing(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) { }
 
 }
 

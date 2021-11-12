@@ -10,7 +10,7 @@ import UIKit
 // MARK: - BasketConfiguratorProtocol
 protocol BasketConfiguratorProtocol: AnyObject {
 
-    func configure() -> UIViewController
+    func configure(orderCreationDelegate: OrderCreationDelegate?) -> BasketViewController
 
 }
 
@@ -18,12 +18,12 @@ protocol BasketConfiguratorProtocol: AnyObject {
 class BasketConfigurator: BasketConfiguratorProtocol {
 
     // MARK: - Public methods
-    func configure() -> UIViewController {
+    func configure(orderCreationDelegate: OrderCreationDelegate?) -> BasketViewController {
         guard let view = BasketViewController.instantiate()
         else {
             fatalError("No BasketViewController")
         }
-        let presenter  = BasketPresenter(delegate: view)
+        let presenter  = BasketPresenter(delegate: view, orderCreationDelegate: orderCreationDelegate)
         view.presenter = presenter
 
         return view

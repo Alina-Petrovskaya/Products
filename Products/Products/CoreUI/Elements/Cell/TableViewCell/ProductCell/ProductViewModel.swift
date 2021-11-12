@@ -9,8 +9,9 @@ import Foundation
 
 // MARK: - ProductViewModelProtocol
 protocol ProductViewModelProtocol {
+    var productID: String { get }
     var title: String { get }
-    var price: String { get }
+    var price: Double { get }
     var image: URL? { get }
 }
 
@@ -20,15 +21,17 @@ class ProductViewModel: ProductViewModelProtocol, DiffableTableCellViewModel {
     // MARK: - Private properties
 
     // MARK: - Public properties
+    var productID: String
     var title: String
-    var price: String
+    var price: Double
     var image: URL?
 
     // MARK: Life cycle
-    init(title: String, price: String, image: URL?) {
-        self.title = title
-        self.price = price
-        self.image = image
+    init(model: ProductModel) {
+        self.productID = model.productID
+        self.title = model.name
+        self.price = model.price
+        self.image = nil
     }
 
     // MARK: - Private methods

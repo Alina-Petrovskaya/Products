@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - ColorConstant
+// MARK: - Color Constants
 enum ColorConstant: String {
 
     case lightBlueBackground = "LightBlueBackground"
@@ -21,5 +21,14 @@ enum ColorConstant: String {
     func getColor() -> UIColor {
         UIColor(named: self.rawValue) ?? .clear
     }
+
+}
+
+// MARK: - Apollo Constants
+enum GraphQlConstants: String {
+
+    case apolloUser = "iO4z3C-2j3JHEUC8BIP1eQ"
+    case apolloKey  = "3f585b27-32ab-4eee-95af-7292fcc74e38"
+    case url        = "https://a5node-graphql-apollo.herokuapp.com/api/graphql"
 
 }

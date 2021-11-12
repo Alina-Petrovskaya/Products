@@ -16,6 +16,7 @@ class BasketCell: UITableViewCell {
     @IBOutlet private weak var price: UILabel!
     @IBOutlet private weak var productID: UILabel!
     @IBOutlet private weak var productImage: UIImageView!
+    @IBOutlet private weak var deleteButton: UIButton!
 
     // MARK: - Private properties
 
@@ -39,10 +40,11 @@ class BasketCell: UITableViewCell {
     func configure(with viewModel: BasketViewModelProtocol) {
         titleText.text    = viewModel.titleText
         price.text        = "price: \(viewModel.price)"
-        productID.text    = "ID: \(viewModel.productID)"
+        productID.text    = viewModel.subtitle
         productImage.sd_setImage(with: viewModel.productImage,
                                  placeholderImage: productImage.image,
                                  options: [], context: nil)
+        deleteButton.isHidden = viewModel.isHideDeleteButton
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

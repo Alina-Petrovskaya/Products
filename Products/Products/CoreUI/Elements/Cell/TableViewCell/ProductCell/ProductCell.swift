@@ -39,6 +39,16 @@ class ProductCell: UITableViewCell {
         productImage.layer.cornerRadius      = productImage.bounds.height / 2
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        cellActionButtonLabel?.textColor = ColorConstant.darkBlueBackground.getColor()
+    }
+
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        cellActionButtonLabel?.textColor = ColorConstant.darkBlueBackground.getColor()
+    }
+
     // MARK: - IBActions
     @IBAction func byeButtonTapped(_ sender: UIButton) {
         byeButtonTapped?()
@@ -49,7 +59,7 @@ class ProductCell: UITableViewCell {
     // MARK: - Public methods
     func configure(with viewModel: ProductViewModelProtocol) {
         titleText.text = viewModel.title
-        price.text = viewModel.price
+        price.text = "\(viewModel.price)"
         productImage.sd_setImage(with: viewModel.image,
                                  placeholderImage: productImage.image,
                                  options: [],

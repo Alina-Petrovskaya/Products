@@ -22,11 +22,13 @@ class ProductsTableViewConfigurator: DiffableTableDelegate {
     var cells: [UITableViewCell.Type]               = [ProductCell.self]
     var headers: [UITableViewHeaderFooterView.Type] = []
     var footers: [UITableViewHeaderFooterView.Type] = []
+    let swipes: [DiffableTableSwipeViewModel]
     weak var delegate: ProductsTableViewCellDelegate?
 
     // MARK: - Life cycle
-    init(delegate: ProductsTableViewCellDelegate) {
+    init(delegate: ProductsTableViewCellDelegate, swipes: [DiffableTableSwipeViewModel]) {
         self.delegate = delegate
+        self.swipes   = swipes
     }
 
     // MARK: - Private methods
@@ -41,9 +43,11 @@ class ProductsTableViewConfigurator: DiffableTableDelegate {
         }
 
         cell?.byeButtonTapped = { [weak self] in
-            self?.delegate?.byeButtonTapped(row: indexPath.row)
+            let index = tableView.indexPath(for: cell ?? UITableViewCell())
+            if let row = index?.row {
+                self?.delegate?.byeButtonTapped(row: row)
+            }
         }
-
         return cell ?? UITableViewCell()
     }
     
@@ -56,5 +60,17 @@ class ProductsTableViewConfigurator: DiffableTableDelegate {
 
     func updateHeaderHeight(_ tableView: UITableView, at section: Int) -> CGFloat {
         UITableView.automaticDimension
+    }
+    
+    func configureSwipe(for tableView: UITableView,
+                        at indexPath: IndexPath,
+                        with alignment: DiffableTableSwipeAlignment) -> [DiffableTableSwipeViewModel] {
+        swipes
+    }
+
+    func updateEditing(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            tableView.cellForRow(at: indexPath)?.layoutIfNeeded()
+        }
     }
 }

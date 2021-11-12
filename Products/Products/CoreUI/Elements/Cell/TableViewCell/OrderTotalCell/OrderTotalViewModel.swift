@@ -10,7 +10,7 @@ import Foundation
 // MARK: - OrderTotalViewModelProtocol
 protocol OrderTotalViewModelProtocol {
 
-    var total: Double { get }
+    var total: Double { get set }
     
 }
 
@@ -18,9 +18,10 @@ protocol OrderTotalViewModelProtocol {
 class OrderTotalViewModel: OrderTotalViewModelProtocol, DiffableTableCellViewModel {
 
     // MARK: - Private properties
-    var total: Double
+    private let id = UUID().uuidString
 
     // MARK: - Public properties
+    var total: Double
 
     // MARK: Life cycle
     init(total: Double) {
@@ -32,11 +33,12 @@ class OrderTotalViewModel: OrderTotalViewModelProtocol, DiffableTableCellViewMod
     // MARK: - Public methods
     func hash(into hasher: inout Hasher) {
         hasher.combine(total)
+        hasher.combine(id)
     }
     
     // MARK: - Static methods
     static func ==(lhs: OrderTotalViewModel, rhs: OrderTotalViewModel) -> Bool {
-               lhs.total  == rhs.total
+               lhs.total == rhs.total && lhs.id == rhs.id
     }
 
 }

@@ -19,15 +19,22 @@ class TabBarConfigurator: TabBarConfiguratorProtocol {
     
     // MARK: - Private methods
     private func configureItems() -> [UIViewController] {
-        let productsVC = ProductsConfigurator().configure()
-        productsVC.tabBarItem = UITabBarItem(title: "",
-                                             image: UIImage(systemName: "shippingbox"),
-                                             selectedImage: UIImage(systemName: "shippingbox.fill"))
-        let basketVC = BasketConfigurator().configure()
+        let userVC = UserProfileConfigurator().configure()
+        userVC.tabBarItem = UITabBarItem(title: "",
+                                         image: UIImage(systemName: "person"),
+                                         selectedImage: UIImage(systemName: "person.fill"))
+        
+        let basketVC = BasketConfigurator().configure(orderCreationDelegate: userVC)
         basketVC.tabBarItem = UITabBarItem(title: "",
                                            image: UIImage(systemName: "cart"),
                                            selectedImage: UIImage(systemName: "cart.fill"))
-        return [productsVC, basketVC]
+
+        let productsVC = ProductsConfigurator().configure(productBuckedAddDelegate: basketVC)
+        productsVC.tabBarItem = UITabBarItem(title: "",
+                                             image: UIImage(systemName: "shippingbox"),
+                                             selectedImage: UIImage(systemName: "shippingbox.fill"))
+
+        return [productsVC, basketVC, userVC]
     }
 
     // MARK: - Public methods
@@ -40,6 +47,7 @@ class TabBarConfigurator: TabBarConfiguratorProtocol {
         view.presenter        = presenter
         view.viewControllers  = configureItems()
         view.tabBar.tintColor = ColorConstant.purpleText.getColor()
+        
         return view
     }
 

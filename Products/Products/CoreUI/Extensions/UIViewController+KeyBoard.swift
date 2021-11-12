@@ -13,7 +13,7 @@ extension UIViewController {
      
      - parameter for view: Any element of screen that conforms to UIView.
      */
-    func addGestureRecognizer<T: UIView>(for view: T) {
+    func addHideKeyBoardRecognizer<T: UIView>(for view: T) {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(sender:)))
         view.addGestureRecognizer(tap)
     }

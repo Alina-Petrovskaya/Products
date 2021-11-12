@@ -43,7 +43,10 @@ class BasketTableViewConfigurator: DiffableTableDelegate {
             }
             
             cell?.deleteProduct = { [weak self] in
-                self?.delegate?.deleteButtonTapped(row: indexPath.row)
+                let index = tableView.indexPath(for: cell ?? UITableViewCell())
+                if let row = index?.row {
+                    self?.delegate?.deleteButtonTapped(row: row)
+                }
             }
             
             return cell ?? UITableViewCell()

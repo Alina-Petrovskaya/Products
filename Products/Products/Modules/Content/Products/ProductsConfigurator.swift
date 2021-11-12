@@ -10,7 +10,7 @@ import UIKit
 // MARK: - ProductsConfiguratorProtocol
 protocol ProductsConfiguratorProtocol: AnyObject {
 
-    func configure() -> UIViewController
+    func configure(productBuckedAddDelegate: ProductBuckedAddDelegate?) -> UIViewController
 
 }
 
@@ -18,12 +18,12 @@ protocol ProductsConfiguratorProtocol: AnyObject {
 class ProductsConfigurator: ProductsConfiguratorProtocol {
 
     // MARK: - Public methods
-    func configure() -> UIViewController {
+    func configure(productBuckedAddDelegate: ProductBuckedAddDelegate?) -> UIViewController {
         guard let view = ProductsViewController.instantiate()
         else {
             fatalError("No ProductsViewController")
         }
-        let presenter  = ProductsPresenter(delegate: view)
+        let presenter  = ProductsPresenter(delegate: view, productBuckedAddDelegate: productBuckedAddDelegate)
         view.presenter = presenter
 
         return view

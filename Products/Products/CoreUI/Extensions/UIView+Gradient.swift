@@ -30,7 +30,7 @@ extension UIView {
     }
     
     private func animateGradient(from: CGColor, to: CGColor, animatelayer: CAGradientLayer) {
-        var animation : CABasicAnimation = CABasicAnimation(keyPath: "colors")
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "colors")
         animation.fromValue    = [from, to]
         animation.toValue      = [to, from]
         animation.duration     = 5.0

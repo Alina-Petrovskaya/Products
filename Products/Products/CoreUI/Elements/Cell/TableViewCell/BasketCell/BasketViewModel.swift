@@ -12,8 +12,10 @@ protocol BasketViewModelProtocol {
     
     var titleText: String { get }
     var price: Double { get }
-    var productID: String { get }
+    var elementID: String { get }
     var productImage: URL? { get }
+    var isHideDeleteButton: Bool { get }
+    var subtitle: String { get }
 
 }
 
@@ -25,15 +27,34 @@ class BasketViewModel: BasketViewModelProtocol, DiffableTableCellViewModel {
     // MARK: - Public properties
     var titleText: String
     var price: Double
-    var productID: String
+    var elementID: String
     var productImage: URL?
+    var isHideDeleteButton: Bool
+    var subtitle: String
 
     // MARK: Life cycle
-    init(titleText: String, price: Double, productID: String, productImage: URL?) {
-        self.titleText    = titleText
-        self.price        = price
-        self.productID    = productID
-        self.productImage = productImage
+    /**
+     Init for product cell
+     */
+    init(productModel: ProductViewModel) {
+        self.titleText          = productModel.title
+        self.price              = productModel.price
+        self.elementID          = productModel.productID
+        self.subtitle           = "ID: \(productModel.productID)"
+        self.productImage       = productModel.image
+        self.isHideDeleteButton = false
+    }
+    
+    /**
+     Init for order cell
+     */
+    init(orderModel: OrderModel) {
+        self.titleText          = "\(orderModel.date)"
+        self.price              = orderModel.totalSum
+        self.elementID          = orderModel.orderID
+        self.subtitle           = "Created: \(orderModel.date.string())"
+        self.productImage       = nil
+        self.isHideDeleteButton = true
     }
 
     // MARK: - Private methods
@@ -42,7 +63,7 @@ class BasketViewModel: BasketViewModelProtocol, DiffableTableCellViewModel {
     func hash(into hasher: inout Hasher) {
         hasher.combine(titleText)
         hasher.combine(price)
-        hasher.combine(productID)
+        hasher.combine(elementID)
         hasher.combine(productImage)
     }
 
@@ -50,7 +71,7 @@ class BasketViewModel: BasketViewModelProtocol, DiffableTableCellViewModel {
     static func == (lhs: BasketViewModel, rhs: BasketViewModel) -> Bool {
         lhs.titleText       == rhs.titleText
         && lhs.price        == rhs.price
-        && lhs.productID    == rhs.productID
+        && lhs.elementID    == rhs.elementID
         && lhs.productImage == rhs.productImage
     }
 

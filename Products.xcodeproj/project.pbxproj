@@ -19,12 +19,14 @@
 		842D1DD0273D7C3B00080E9C /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DCF273D7C3A00080E9C /* ListModel.swift */; };
 		842D1DD2273E75D000080E9C /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DD1273E75D000080E9C /* ProfileModel.swift */; };
 		842D1DD4273E88D500080E9C /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DD3273E88D400080E9C /* Date+String.swift */; };
+		842D1DD6273EBE5500080E9C /* ProductValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DD5273EBE5500080E9C /* ProductValidationService.swift */; };
+		842D1DD8273EBE7200080E9C /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842D1DD7273EBE7200080E9C /* ValidationError.swift */; };
 		8462CD9B273A652000535CD5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CD9A273A651F00535CD5 /* NetworkManager.swift */; };
 		8462CD9D273A754300535CD5 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CD9C273A754300535CD5 /* NetworkInterceptorProvider.swift */; };
 		8462CD9F273A758200535CD5 /* CustomInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CD9E273A758200535CD5 /* CustomInterceptor.swift */; };
 		8462CDA1273A835E00535CD5 /* GraphQlCustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CDA0273A835E00535CD5 /* GraphQlCustomError.swift */; };
 		8462CDA3273A93A200535CD5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CDA2273A93A200535CD5 /* API.swift */; };
-		8462CDAC273BC65300535CD5 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CDAB273BC65300535CD5 /* ValidationService.swift */; };
+		8462CDAC273BC65300535CD5 /* AuthValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462CDAB273BC65300535CD5 /* AuthValidationService.swift */; };
 		849B0F9D272AB464003761FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B0F9C272AB464003761FA /* AppDelegate.swift */; };
 		849B0F9F272AB464003761FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B0F9E272AB464003761FA /* SceneDelegate.swift */; };
 		849B0FA6272AB468003761FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849B0FA5272AB468003761FA /* Assets.xcassets */; };
@@ -89,6 +91,16 @@
 		849B10DC272C4354003761FA /* OrderTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B10D6272C4354003761FA /* OrderTotalCell.swift */; };
 		849B10DD272C4354003761FA /* OrderTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849B10D7272C4354003761FA /* OrderTotalCell.xib */; };
 		849B10DE272C4354003761FA /* OrderTotalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B10D8272C4354003761FA /* OrderTotalViewModel.swift */; };
+		849B92312744FAED008DA9D8 /* LinuxMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B92202744FAEC008DA9D8 /* LinuxMain.swift */; };
+		849B92322744FAED008DA9D8 /* ApolloCodegenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B92222744FAEC008DA9D8 /* ApolloCodegenTests.swift */; };
+		849B92332744FAED008DA9D8 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B92232744FAEC008DA9D8 /* XCTestManifests.swift */; };
+		849B92342744FAED008DA9D8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 849B92242744FAEC008DA9D8 /* README.md */; };
+		849B92352744FAED008DA9D8 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 849B92252744FAEC008DA9D8 /* Package.resolved */; };
+		849B92362744FAED008DA9D8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 849B92262744FAEC008DA9D8 /* .gitignore */; };
+		849B92372744FAED008DA9D8 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B92272744FAEC008DA9D8 /* Package.swift */; };
+		849B92382744FAED008DA9D8 /* FileStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B922A2744FAEC008DA9D8 /* FileStructure.swift */; };
+		849B92392744FAED008DA9D8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B922B2744FAEC008DA9D8 /* main.swift */; };
+		849B923A2744FAED008DA9D8 /* package.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 849B922E2744FAEC008DA9D8 /* package.xcworkspace */; };
 		84C8E157272C946F00A902C8 /* BasketTableViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E156272C946F00A902C8 /* BasketTableViewConfigurator.swift */; };
 		84C8E15A272D303800A902C8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8E159272D303700A902C8 /* ImagePicker.swift */; };
 		84C8E15D272D353B00A902C8 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 84C8E15C272D353B00A902C8 /* MBProgressHUD */; };
@@ -116,12 +128,14 @@
 		842D1DCF273D7C3A00080E9C /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		842D1DD1273E75D000080E9C /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		842D1DD3273E88D400080E9C /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		842D1DD5273EBE5500080E9C /* ProductValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductValidationService.swift; sourceTree = "<group>"; };
+		842D1DD7273EBE7200080E9C /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		8462CD9A273A651F00535CD5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8462CD9C273A754300535CD5 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		8462CD9E273A758200535CD5 /* CustomInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInterceptor.swift; sourceTree = "<group>"; };
 		8462CDA0273A835E00535CD5 /* GraphQlCustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQlCustomError.swift; sourceTree = "<group>"; };
 		8462CDA2273A93A200535CD5 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		8462CDAB273BC65300535CD5 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		8462CDAB273BC65300535CD5 /* AuthValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthValidationService.swift; sourceTree = "<group>"; };
 		849B0F99272AB464003761FA /* Products.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Products.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849B0F9C272AB464003761FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849B0F9E272AB464003761FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +201,16 @@
 		849B10D6272C4354003761FA /* OrderTotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTotalCell.swift; sourceTree = "<group>"; };
 		849B10D7272C4354003761FA /* OrderTotalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderTotalCell.xib; sourceTree = "<group>"; };
 		849B10D8272C4354003761FA /* OrderTotalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTotalViewModel.swift; sourceTree = "<group>"; };
+		849B92202744FAEC008DA9D8 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		849B92222744FAEC008DA9D8 /* ApolloCodegenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloCodegenTests.swift; sourceTree = "<group>"; };
+		849B92232744FAEC008DA9D8 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		849B92242744FAEC008DA9D8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		849B92252744FAEC008DA9D8 /* Package.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Package.resolved; sourceTree = "<group>"; };
+		849B92262744FAEC008DA9D8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		849B92272744FAEC008DA9D8 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		849B922A2744FAEC008DA9D8 /* FileStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStructure.swift; sourceTree = "<group>"; };
+		849B922B2744FAEC008DA9D8 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		849B922E2744FAEC008DA9D8 /* package.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = package.xcworkspace; sourceTree = "<group>"; };
 		84C8E156272C946F00A902C8 /* BasketTableViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewConfigurator.swift; sourceTree = "<group>"; };
 		84C8E159272D303700A902C8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		84C8E15E272D35E800A902C8 /* HudViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudViewProtocol.swift; sourceTree = "<group>"; };
@@ -228,7 +252,9 @@
 		8462CDAA273BC64200535CD5 /* ValidationService */ = {
 			isa = PBXGroup;
 			children = (
-				8462CDAB273BC65300535CD5 /* ValidationService.swift */,
+				842D1DD7273EBE7200080E9C /* ValidationError.swift */,
+				842D1DD5273EBE5500080E9C /* ProductValidationService.swift */,
+				8462CDAB273BC65300535CD5 /* AuthValidationService.swift */,
 			);
 			path = ValidationService;
 			sourceTree = "<group>";
@@ -252,6 +278,7 @@
 		849B0F9B272AB464003761FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				849B921E2744FAEC008DA9D8 /* ApolloCodegen */,
 				849B102F272ABDE5003761FA /* CoreUI */,
 				849B1011272ABAFC003761FA /* Services */,
 				849B100E272ABADA003761FA /* Models */,
@@ -594,6 +621,71 @@
 			path = OrderTotalCell;
 			sourceTree = "<group>";
 		};
+		849B921E2744FAEC008DA9D8 /* ApolloCodegen */ = {
+			isa = PBXGroup;
+			children = (
+				849B921F2744FAEC008DA9D8 /* Tests */,
+				849B92242744FAEC008DA9D8 /* README.md */,
+				849B92252744FAEC008DA9D8 /* Package.resolved */,
+				849B92262744FAEC008DA9D8 /* .gitignore */,
+				849B92272744FAEC008DA9D8 /* Package.swift */,
+				849B92282744FAEC008DA9D8 /* Sources */,
+				849B922C2744FAEC008DA9D8 /* .swiftpm */,
+			);
+			path = ApolloCodegen;
+			sourceTree = "<group>";
+		};
+		849B921F2744FAEC008DA9D8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				849B92202744FAEC008DA9D8 /* LinuxMain.swift */,
+				849B92212744FAEC008DA9D8 /* ApolloCodegenTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		849B92212744FAEC008DA9D8 /* ApolloCodegenTests */ = {
+			isa = PBXGroup;
+			children = (
+				849B92222744FAEC008DA9D8 /* ApolloCodegenTests.swift */,
+				849B92232744FAEC008DA9D8 /* XCTestManifests.swift */,
+			);
+			path = ApolloCodegenTests;
+			sourceTree = "<group>";
+		};
+		849B92282744FAEC008DA9D8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				849B92292744FAEC008DA9D8 /* ApolloCodegen */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		849B92292744FAEC008DA9D8 /* ApolloCodegen */ = {
+			isa = PBXGroup;
+			children = (
+				849B922A2744FAEC008DA9D8 /* FileStructure.swift */,
+				849B922B2744FAEC008DA9D8 /* main.swift */,
+			);
+			path = ApolloCodegen;
+			sourceTree = "<group>";
+		};
+		849B922C2744FAEC008DA9D8 /* .swiftpm */ = {
+			isa = PBXGroup;
+			children = (
+				849B922D2744FAEC008DA9D8 /* xcode */,
+			);
+			path = .swiftpm;
+			sourceTree = "<group>";
+		};
+		849B922D2744FAEC008DA9D8 /* xcode */ = {
+			isa = PBXGroup;
+			children = (
+				849B922E2744FAEC008DA9D8 /* package.xcworkspace */,
+			);
+			path = xcode;
+			sourceTree = "<group>";
+		};
 		84C8E155272C939600A902C8 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,11 +725,11 @@
 		84C8E172272D4FF200A902C8 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				84C8E184272D541500A902C8 /* TableView */,
 				84C8E173272D4FF200A902C8 /* UserProfileViewController.swift */,
 				84C8E174272D4FF200A902C8 /* UserProfilePresenter.swift */,
 				84C8E175272D4FF200A902C8 /* UserProfileConfigurator.swift */,
 				84C8E176272D4FF200A902C8 /* UserProfileViewController.storyboard */,
+				84C8E184272D541500A902C8 /* TableView */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -738,7 +830,9 @@
 			files = (
 				84C8E17A272D4FF200A902C8 /* UserProfileViewController.storyboard in Resources */,
 				849B10A9272BF0BE003761FA /* TableHeaderView.xib in Resources */,
+				849B92342744FAED008DA9D8 /* README.md in Resources */,
 				849B0FA9272AB468003761FA /* LaunchScreen.storyboard in Resources */,
+				849B92362744FAED008DA9D8 /* .gitignore in Resources */,
 				849B10CA272C2F9C003761FA /* Query.graphql in Resources */,
 				849B1085272AF6F1003761FA /* ProductAddViewController.storyboard in Resources */,
 				849B105F272AEC55003761FA /* Poppins-Bold.ttf in Resources */,
@@ -749,8 +843,10 @@
 				84C8E183272D513B00A902C8 /* UserInfoCell.xib in Resources */,
 				849B10DA272C4354003761FA /* BasketCell.xib in Resources */,
 				849B1090272AF6F1003761FA /* ProductsViewController.storyboard in Resources */,
+				849B923A2744FAED008DA9D8 /* package.xcworkspace in Resources */,
 				849B1053272AD72B003761FA /* LoginViewController.storyboard in Resources */,
 				849B0FA6272AB468003761FA /* Assets.xcassets in Resources */,
+				849B92352744FAED008DA9D8 /* Package.resolved in Resources */,
 				849B10DD272C4354003761FA /* OrderTotalCell.xib in Resources */,
 				849B109A272BD80A003761FA /* ProductCell.xib in Resources */,
 				849B1039272AC35D003761FA /* RouterViewController.storyboard in Resources */,
@@ -777,7 +873,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to vyour project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\n# Download new schema\n# \"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download \\\n--header=\"APOLLO_USER: iO4z3C-2j3JHEUC8BIP1eQ\" \\\n--header=\"APOLLO_KEY: 3f585b27-32ab-4eee-95af-7292fcc74e38\" \\\n--header=\"content-type: application/json\" \\\n--endpoint=https://a5node-graphql-apollo.herokuapp.com/api/graphql \\\nschema.json\n\n# Create API file\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" Products/Resources/GraphQL/API.swift\n\n";
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to vyour project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\n# Download new schema\n \"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download \\\n--header=\"APOLLO_USER: iO4z3C-2j3JHEUC8BIP1eQ\" \\\n--header=\"APOLLO_KEY: service:iO4z3C-2j3JHEUC8BIP1eQ:6P3sWMSR0N51rx6RzH9fPg\" \\\n--header=\"APOLLO_GRAPH_ID: iO4z3C-2j3JHEUC8BIP1eQ\" \\\n--header=\"APOLLO_SCHEMA_REPORTING: true\" \\\n--header=\"APOLLO_GRAPH_VARIANT: current\" \\\n--endpoint=https://a5node-graphql-apollo.herokuapp.com/api/graphql \\\nschema.json\n\n# Create API file\n# \"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" Products/Resources/GraphQL/API.swift\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -786,6 +882,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849B92332744FAED008DA9D8 /* XCTestManifests.swift in Sources */,
 				8462CD9D273A754300535CD5 /* NetworkInterceptorProvider.swift in Sources */,
 				849B10AA272BF0BE003761FA /* TableHeaderView.swift in Sources */,
 				842D1DB7273C11F400080E9C /* TableViewCell+SwipeStyle.swift in Sources */,
@@ -793,9 +890,11 @@
 				849B1050272AD72B003761FA /* LoginConfigurator.swift in Sources */,
 				849B10AE272BF1CE003761FA /* ProductsTableViewConfigurator.swift in Sources */,
 				8462CD9F273A758200535CD5 /* CustomInterceptor.swift in Sources */,
+				842D1DD8273EBE7200080E9C /* ValidationError.swift in Sources */,
 				849B108E272AF6F1003761FA /* ProductsPresenter.swift in Sources */,
 				849B1084272AF6F1003761FA /* BasketPresenter.swift in Sources */,
 				849B1055272AD72B003761FA /* SignInConfigurator.swift in Sources */,
+				849B92372744FAED008DA9D8 /* Package.swift in Sources */,
 				849B10B0272BF1E5003761FA /* TableView+DequeueCell.swift in Sources */,
 				849B103A272AC35D003761FA /* RouterConfigurator.swift in Sources */,
 				8462CD9B273A652000535CD5 /* NetworkManager.swift in Sources */,
@@ -809,17 +908,22 @@
 				849B1051272AD72B003761FA /* LoginViewController.swift in Sources */,
 				849B102D272ABDE2003761FA /* DiffableTableUpdateProtocol.swift in Sources */,
 				849B102C272ABDE2003761FA /* DiffableTableView.swift in Sources */,
+				849B92392744FAED008DA9D8 /* main.swift in Sources */,
 				849B103B272AC35D003761FA /* RouterViewController.swift in Sources */,
+				842D1DD6273EBE5500080E9C /* ProductValidationService.swift in Sources */,
+				849B92322744FAED008DA9D8 /* ApolloCodegenTests.swift in Sources */,
 				84C8E165272D4ACE00A902C8 /* UserModel.swift in Sources */,
 				84C8E182272D513B00A902C8 /* UserInfoCell.swift in Sources */,
 				849B10DE272C4354003761FA /* OrderTotalViewModel.swift in Sources */,
 				84C8E161272D49EC00A902C8 /* ProductModel.swift in Sources */,
+				849B92312744FAED008DA9D8 /* LinuxMain.swift in Sources */,
 				849B1057272AD72B003761FA /* SignInViewController.swift in Sources */,
 				849B108F272AF6F1003761FA /* ProductsConfigurator.swift in Sources */,
 				849B108D272AF6F1003761FA /* ProductsViewController.swift in Sources */,
 				849B105C272ADDA4003761FA /* Constants.swift in Sources */,
 				849B1054272AD72B003761FA /* SignInPresenter.swift in Sources */,
 				849B102E272ABDE2003761FA /* DiffableTableSwipeViewModel.swift in Sources */,
+				849B92382744FAED008DA9D8 /* FileStructure.swift in Sources */,
 				849B108C272AF6F1003761FA /* TabBarConfigurator.swift in Sources */,
 				849B103E272ACAF2003761FA /* UIView+Gradient.swift in Sources */,
 				849B1032272AC24B003761FA /* UIViewController+Instantiate.swift in Sources */,
@@ -842,7 +946,7 @@
 				849B102B272ABDE2003761FA /* DiffableTableDelegate.swift in Sources */,
 				849B0F9D272AB464003761FA /* AppDelegate.swift in Sources */,
 				84C8E181272D513B00A902C8 /* UserInfoViewModel.swift in Sources */,
-				8462CDAC273BC65300535CD5 /* ValidationService.swift in Sources */,
+				8462CDAC273BC65300535CD5 /* AuthValidationService.swift in Sources */,
 				849B1088272AF6F1003761FA /* ProductAddConfigurator.swift in Sources */,
 				849B0F9F272AB464003761FA /* SceneDelegate.swift in Sources */,
 				849B1086272AF6F1003761FA /* ProductAddPresenter.swift in Sources */,

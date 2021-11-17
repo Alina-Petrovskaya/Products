@@ -1,5 +1,5 @@
 //
-//  ValidationService.swift
+//  AuthValidationService.swift
 //  Products
 //
 //  Created by Alina Petrovskaya on 10.11.2021.
@@ -11,7 +11,7 @@ import Foundation
 typealias ErrorString = String
 
 // MARK: - Enums
-enum ValidationType {
+enum AuthValidationType {
 
     case email(String)
     case password(String)
@@ -19,20 +19,8 @@ enum ValidationType {
 
 }
 
-enum ValidationError: String, Error, LocalizedError, CustomStringConvertible {
-
-    case shortPassword       = "Short password"
-    case shortEmail          = "Short email"
-    case emailBadlyFormatted = "Email Badly Formatted"
-    case shortName           = "Short name"
-    
-    var description: String { rawValue }
-    var errorDescription: String? { description }
-
-}
-
 // MARK: - ValidationSercice
-class ValidationService {
+class AuthValidationService {
     
     // MARK: - Private properties
 
@@ -41,7 +29,7 @@ class ValidationService {
     // MARK: - Life cycle
     
     // MARK: - Private methods
-    private func validate(_ type: ValidationType) -> Result<Bool, ValidationError> {
+    private func validate(_ type: AuthValidationType) -> Result<Bool, ValidationError> {
         switch type {
         case .email(let email):
             let email = email.replacingOccurrences(of: " ", with: "")
@@ -76,7 +64,7 @@ class ValidationService {
     }
     
     // MARK: - Public methods
-    func validate(_ types: [ValidationType]) -> ErrorString? {
+    func validate(_ types: [AuthValidationType]) -> ErrorString? {
 
         let validationResult = types.compactMap { type -> Result<Bool, ValidationError> in
             return validate(type)

@@ -7,6 +7,7 @@
 
 import Foundation
 import Apollo
+import Network
 
 // MARK: - NetworkManager
 class NetworkManager  {
@@ -17,6 +18,8 @@ class NetworkManager  {
     private var apollo: ApolloClient?
     private var apolloCancellable: Cancellable?
     private let queue = DispatchQueue.global(qos: .userInitiated)
+    private var connectionState: NWPath.Status = .unsatisfied
+    private let monitor = NWPathMonitor()
 
     // MARK: - Public properties
 
@@ -34,9 +37,17 @@ class NetworkManager  {
         let requestChainTransport = RequestChainNetworkTransport(interceptorProvider: provider,
                                                                  endpointURL: url)
         apollo = ApolloClient(networkTransport: requestChainTransport, store: store)
+        monitorInternetConnection()
     }
 
     // MARK: - Private methods
+    private func monitorInternetConnection() {
+        monitor.pathUpdateHandler = { [weak self] path in
+            self?.connectionState = path.status
+        }
+        monitor.start(queue: queue)
+    }
+
     private func decodeData<T: Codable>(from jsonObject: JSONObject,
                                         with model: T.Type) throws -> T {
         do {
@@ -53,6 +64,7 @@ class NetworkManager  {
     func requestData<T: Codable, Q: GraphQLQuery>(query: Q, model: T.Type,
                                                   completion: @escaping (Result<T, Error>) -> Void) {
         guard let apollo = apollo else { completion(.failure(GraphQlDefaultError.nilUrl)); return }
+        guard connectionState == .satisfied else { completion(.failure(GraphQlDefaultError.noInternetConnection)); return }
 
         apolloCancellable = apollo.fetch(query: query,
                                          cachePolicy: .returnCacheDataElseFetch,
@@ -70,8 +82,7 @@ class NetworkManager  {
                         }
                         
                         do {
-                            if let decodableData = try self?.decodeData(from: jsonObject,
-                                                                        with: model) {
+                            if let decodableData = try self?.decodeData(from: jsonObject, with: model) {
                                 completion(.success(decodableData))
                             }
                             
@@ -90,7 +101,7 @@ class NetworkManager  {
     func mutateData<M: GraphQLMutation>(query: M,
                                         completion: @escaping (Result<Bool, Error>) -> Void) {
         guard let apollo = apollo else { completion(.failure(GraphQlDefaultError.nilUrl)); return }
-        
+        guard connectionState == .satisfied else { completion(.failure(GraphQlDefaultError.noInternetConnection)); return }
 
         apollo.perform(mutation: query,
                        publishResultToStore: true,
@@ -116,9 +127,8 @@ class NetworkManager  {
                     T: Codable>(query: M,
                                 model: T.Type,
                                 completion: @escaping (Result<T, Error>) -> Void) {
-        guard let apollo = apollo else {
-            completion(.failure(GraphQlDefaultError.nilUrl))
-            return }
+        guard let apollo = apollo else { completion(.failure(GraphQlDefaultError.nilUrl)); return }
+        guard connectionState == .satisfied else { completion(.failure(GraphQlDefaultError.noInternetConnection)); return }
 
         apollo.perform(mutation: query,
                        publishResultToStore: true,
@@ -144,8 +154,7 @@ class NetworkManager  {
                             print("Found Error")
                             completion(.failure(error))
                         }
-                        
-                        
+
                     case .failure(let error):
                         completion(.failure(error))
                     }
@@ -153,5 +162,4 @@ class NetworkManager  {
             }
         }
     }
-
 }

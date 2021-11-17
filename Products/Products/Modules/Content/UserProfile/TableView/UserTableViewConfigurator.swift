@@ -50,16 +50,14 @@ class UserTableViewConfigurator: DiffableTableDelegate {
 
         default:
             view.configure(with: TableHeaderViewModel(title: "Orders List"))
+            
         }
 
         return view
     }
     
     func updateHeaderHeight(_ tableView: UITableView, at section: Int) -> CGFloat {
-        if section == 0 {
-            return UITableView.automaticDimension
-        }
-        return 0.0
+        return UITableView.automaticDimension
     }
 
 }

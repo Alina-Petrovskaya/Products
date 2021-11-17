@@ -44,7 +44,6 @@ query GetOrdersUserId($data: InputOrderId!, $findUserData2: InputFindUser!) {
     email
     name
   }
-
 }
   
 
@@ -62,6 +61,7 @@ mutation CreateUserMutation($data: InputCreateUser!){
 mutation CreateProduct($data: InputCreateProduct!) {
   createProduct(data: $data) {
     id
+    _id
     price
     title
     content
@@ -78,6 +78,18 @@ mutation CreateOrder($data: InputCreateOrder!) {
     _id
     id
     paid
+  }
+}
+
+mutation UpdateProduct($data: InputUpdateProduct!) {
+  updateProduct(data: $data) {
+    _id
+    content
+    amount
+    create_at
+    isRemove
+    price
+    title
   }
 }
 

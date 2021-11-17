@@ -39,7 +39,7 @@ class SignInPresenter: SignInPresenterProtocol {
 
     // MARK: - Public methods
     func createUser(name: String?, login: String?, password: String?) {
-        let validationResult = ValidationService().validate([
+        let validationResult = AuthValidationService().validate([
             .email(login ?? ""),
             .name(name ?? ""),
             .password(password ?? "")])
@@ -49,9 +49,7 @@ class SignInPresenter: SignInPresenterProtocol {
             delegate.hideProgress(with: .error(errorMessage))
             
         case .none:
-            let userData = InputCreateUser(email: login ?? "",
-                                           name: name ?? "",
-                                           password: password ?? "")
+            let userData = InputCreateUser(name: name ?? "", email: login ?? "", password: password ?? "")
             network.mutateData(query: CreateUserMutationMutation(data: userData),
                                model: UserModel.self) { [weak self] result in
                 switch result {

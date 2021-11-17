@@ -28,7 +28,7 @@ enum ColorConstant: String {
 enum GraphQlConstants: String {
 
     case apolloUser = "iO4z3C-2j3JHEUC8BIP1eQ"
-    case apolloKey  = "3f585b27-32ab-4eee-95af-7292fcc74e38"
+    case apolloKey  = "service:iO4z3C-2j3JHEUC8BIP1eQ:6P3sWMSR0N51rx6RzH9fPg"
     case url        = "https://a5node-graphql-apollo.herokuapp.com/api/graphql"
 
 }

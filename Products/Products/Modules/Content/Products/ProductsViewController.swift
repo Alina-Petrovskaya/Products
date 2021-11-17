@@ -43,5 +43,9 @@ class ProductsViewController: UIViewController, ProductsPresenterDelegate, Diffa
     func hideProgress(with result: HudResult) {
         showResult(from: view, result: result)
     }
+    
+    func showProgressHud() {
+        showHud("Deleting...", to: view)
+    }
 
 }

@@ -8,19 +8,10 @@ public struct InputFindUser: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
   /// - Parameters:
-  ///   - email
   ///   - id
-  public init(email: Swift.Optional<String?> = nil, id: Swift.Optional<GraphQLID?> = nil) {
-    graphQLMap = ["email": email, "id": id]
-  }
-
-  public var email: Swift.Optional<String?> {
-    get {
-      return graphQLMap["email"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "email")
-    }
+  ///   - email
+  public init(id: Swift.Optional<GraphQLID?> = nil, email: Swift.Optional<String?> = nil) {
+    graphQLMap = ["id": id, "email": email]
   }
 
   public var id: Swift.Optional<GraphQLID?> {
@@ -29,6 +20,15 @@ public struct InputFindUser: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var email: Swift.Optional<String?> {
+    get {
+      return graphQLMap["email"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "email")
     }
   }
 }
@@ -67,8 +67,9 @@ public struct InputID: GraphQLMapConvertible {
 
   /// - Parameters:
   ///   - id
-  public init(id: String) {
-    graphQLMap = ["id": id]
+  ///   - filter
+  public init(id: String, filter: Swift.Optional<InputFilter?> = nil) {
+    graphQLMap = ["id": id, "filter": filter]
   }
 
   public var id: String {
@@ -79,6 +80,44 @@ public struct InputID: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "id")
     }
   }
+
+  public var filter: Swift.Optional<InputFilter?> {
+    get {
+      return graphQLMap["filter"] as? Swift.Optional<InputFilter?> ?? Swift.Optional<InputFilter?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "filter")
+    }
+  }
+}
+
+public struct InputFilter: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - skip
+  ///   - limit
+  public init(skip: Swift.Optional<Double?> = nil, limit: Swift.Optional<Double?> = nil) {
+    graphQLMap = ["skip": skip, "limit": limit]
+  }
+
+  public var skip: Swift.Optional<Double?> {
+    get {
+      return graphQLMap["skip"] as? Swift.Optional<Double?> ?? Swift.Optional<Double?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "skip")
+    }
+  }
+
+  public var limit: Swift.Optional<Double?> {
+    get {
+      return graphQLMap["limit"] as? Swift.Optional<Double?> ?? Swift.Optional<Double?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "limit")
+    }
+  }
 }
 
 public struct InputOrderId: GraphQLMapConvertible {
@@ -86,8 +125,9 @@ public struct InputOrderId: GraphQLMapConvertible {
 
   /// - Parameters:
   ///   - id
-  public init(id: GraphQLID) {
-    graphQLMap = ["id": id]
+  ///   - filter
+  public init(id: GraphQLID, filter: Swift.Optional<InputFilter?> = nil) {
+    graphQLMap = ["id": id, "filter": filter]
   }
 
   public var id: GraphQLID {
@@ -98,26 +138,26 @@ public struct InputOrderId: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "id")
     }
   }
+
+  public var filter: Swift.Optional<InputFilter?> {
+    get {
+      return graphQLMap["filter"] as? Swift.Optional<InputFilter?> ?? Swift.Optional<InputFilter?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "filter")
+    }
+  }
 }
 
 public struct InputCreateUser: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
   /// - Parameters:
-  ///   - email
   ///   - name
+  ///   - email
   ///   - password
-  public init(email: String, name: String, password: String) {
-    graphQLMap = ["email": email, "name": name, "password": password]
-  }
-
-  public var email: String {
-    get {
-      return graphQLMap["email"] as! String
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "email")
-    }
+  public init(name: String, email: String, password: String) {
+    graphQLMap = ["name": name, "email": email, "password": password]
   }
 
   public var name: String {
@@ -126,6 +166,15 @@ public struct InputCreateUser: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var email: String {
+    get {
+      return graphQLMap["email"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "email")
     }
   }
 
@@ -143,40 +192,13 @@ public struct InputCreateProduct: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
   /// - Parameters:
-  ///   - amount
-  ///   - content
-  ///   - creator
   ///   - price
   ///   - title
-  public init(amount: Double, content: String, creator: String, price: Double, title: String) {
-    graphQLMap = ["amount": amount, "content": content, "creator": creator, "price": price, "title": title]
-  }
-
-  public var amount: Double {
-    get {
-      return graphQLMap["amount"] as! Double
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "amount")
-    }
-  }
-
-  public var content: String {
-    get {
-      return graphQLMap["content"] as! String
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "content")
-    }
-  }
-
-  public var creator: String {
-    get {
-      return graphQLMap["creator"] as! String
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "creator")
-    }
+  ///   - content
+  ///   - amount
+  ///   - creator
+  public init(price: Double, title: String, content: String, amount: Double, creator: String) {
+    graphQLMap = ["price": price, "title": title, "content": content, "amount": amount, "creator": creator]
   }
 
   public var price: Double {
@@ -196,6 +218,33 @@ public struct InputCreateProduct: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "title")
     }
   }
+
+  public var content: String {
+    get {
+      return graphQLMap["content"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "content")
+    }
+  }
+
+  public var amount: Double {
+    get {
+      return graphQLMap["amount"] as! Double
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "amount")
+    }
+  }
+
+  public var creator: String {
+    get {
+      return graphQLMap["creator"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "creator")
+    }
+  }
 }
 
 public struct InputCreateOrder: GraphQLMapConvertible {
@@ -203,10 +252,10 @@ public struct InputCreateOrder: GraphQLMapConvertible {
 
   /// - Parameters:
   ///   - customer
-  ///   - price
   ///   - products
-  public init(customer: GraphQLID, price: Double, products: [GraphQLID]) {
-    graphQLMap = ["customer": customer, "price": price, "products": products]
+  ///   - price
+  public init(customer: GraphQLID, products: [GraphQLID], price: Double) {
+    graphQLMap = ["customer": customer, "products": products, "price": price]
   }
 
   public var customer: GraphQLID {
@@ -218,6 +267,15 @@ public struct InputCreateOrder: GraphQLMapConvertible {
     }
   }
 
+  public var products: [GraphQLID] {
+    get {
+      return graphQLMap["products"] as! [GraphQLID]
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "products")
+    }
+  }
+
   public var price: Double {
     get {
       return graphQLMap["price"] as! Double
@@ -226,13 +284,73 @@ public struct InputCreateOrder: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "price")
     }
   }
+}
 
-  public var products: [GraphQLID] {
+public struct InputUpdateProduct: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - id
+  ///   - price
+  ///   - title
+  ///   - content
+  ///   - amount
+  ///   - isRemove
+  public init(id: GraphQLID, price: Swift.Optional<Double?> = nil, title: Swift.Optional<String?> = nil, content: Swift.Optional<String?> = nil, amount: Swift.Optional<Double?> = nil, isRemove: Bool) {
+    graphQLMap = ["id": id, "price": price, "title": title, "content": content, "amount": amount, "isRemove": isRemove]
+  }
+
+  public var id: GraphQLID {
     get {
-      return graphQLMap["products"] as! [GraphQLID]
+      return graphQLMap["id"] as! GraphQLID
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "products")
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var price: Swift.Optional<Double?> {
+    get {
+      return graphQLMap["price"] as? Swift.Optional<Double?> ?? Swift.Optional<Double?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "price")
+    }
+  }
+
+  public var title: Swift.Optional<String?> {
+    get {
+      return graphQLMap["title"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "title")
+    }
+  }
+
+  public var content: Swift.Optional<String?> {
+    get {
+      return graphQLMap["content"] as? Swift.Optional<String?> ?? Swift.Optional<String?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "content")
+    }
+  }
+
+  public var amount: Swift.Optional<Double?> {
+    get {
+      return graphQLMap["amount"] as? Swift.Optional<Double?> ?? Swift.Optional<Double?>.none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "amount")
+    }
+  }
+
+  public var isRemove: Bool {
+    get {
+      return graphQLMap["isRemove"] as! Bool
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "isRemove")
     }
   }
 }
@@ -963,6 +1081,7 @@ public final class CreateProductMutation: GraphQLMutation {
       createProduct(data: $data) {
         __typename
         id
+        _id
         price
         title
         content
@@ -1020,6 +1139,7 @@ public final class CreateProductMutation: GraphQLMutation {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("_id", type: .scalar(String.self)),
           GraphQLField("price", type: .nonNull(.scalar(Double.self))),
           GraphQLField("title", type: .nonNull(.scalar(String.self))),
           GraphQLField("content", type: .nonNull(.scalar(String.self))),
@@ -1035,8 +1155,8 @@ public final class CreateProductMutation: GraphQLMutation {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID, price: Double, title: String, content: String, creator: GraphQLID, isRemove: Bool, amount: Double) {
-        self.init(unsafeResultMap: ["__typename": "CreateProduct", "id": id, "price": price, "title": title, "content": content, "creator": creator, "isRemove": isRemove, "amount": amount])
+      public init(id: GraphQLID, _id: String? = nil, price: Double, title: String, content: String, creator: GraphQLID, isRemove: Bool, amount: Double) {
+        self.init(unsafeResultMap: ["__typename": "CreateProduct", "id": id, "_id": _id, "price": price, "title": title, "content": content, "creator": creator, "isRemove": isRemove, "amount": amount])
       }
 
       public var __typename: String {
@@ -1054,6 +1174,15 @@ public final class CreateProductMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var _id: String? {
+        get {
+          return resultMap["_id"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "_id")
         }
       }
 
@@ -1245,6 +1374,165 @@ public final class CreateOrderMutation: GraphQLMutation {
         }
         set {
           resultMap.updateValue(newValue, forKey: "paid")
+        }
+      }
+    }
+  }
+}
+
+public final class UpdateProductMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation UpdateProduct($data: InputUpdateProduct!) {
+      updateProduct(data: $data) {
+        __typename
+        _id
+        content
+        amount
+        create_at
+        isRemove
+        price
+        title
+      }
+    }
+    """
+
+  public let operationName: String = "UpdateProduct"
+
+  public var data: InputUpdateProduct
+
+  public init(data: InputUpdateProduct) {
+    self.data = data
+  }
+
+  public var variables: GraphQLMap? {
+    return ["data": data]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("updateProduct", arguments: ["data": GraphQLVariable("data")], type: .nonNull(.object(UpdateProduct.selections))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(updateProduct: UpdateProduct) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "updateProduct": updateProduct.resultMap])
+    }
+
+    public var updateProduct: UpdateProduct {
+      get {
+        return UpdateProduct(unsafeResultMap: resultMap["updateProduct"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "updateProduct")
+      }
+    }
+
+    public struct UpdateProduct: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["UpdateProduct"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("_id", type: .scalar(String.self)),
+          GraphQLField("content", type: .nonNull(.scalar(String.self))),
+          GraphQLField("amount", type: .nonNull(.scalar(Double.self))),
+          GraphQLField("create_at", type: .scalar(String.self)),
+          GraphQLField("isRemove", type: .nonNull(.scalar(Bool.self))),
+          GraphQLField("price", type: .nonNull(.scalar(Double.self))),
+          GraphQLField("title", type: .nonNull(.scalar(String.self))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(_id: String? = nil, content: String, amount: Double, createAt: String? = nil, isRemove: Bool, price: Double, title: String) {
+        self.init(unsafeResultMap: ["__typename": "UpdateProduct", "_id": _id, "content": content, "amount": amount, "create_at": createAt, "isRemove": isRemove, "price": price, "title": title])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var _id: String? {
+        get {
+          return resultMap["_id"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "_id")
+        }
+      }
+
+      public var content: String {
+        get {
+          return resultMap["content"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "content")
+        }
+      }
+
+      public var amount: Double {
+        get {
+          return resultMap["amount"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "amount")
+        }
+      }
+
+      public var createAt: String? {
+        get {
+          return resultMap["create_at"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "create_at")
+        }
+      }
+
+      public var isRemove: Bool {
+        get {
+          return resultMap["isRemove"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "isRemove")
+        }
+      }
+
+      public var price: Double {
+        get {
+          return resultMap["price"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "price")
+        }
+      }
+
+      public var title: String {
+        get {
+          return resultMap["title"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "title")
         }
       }
     }

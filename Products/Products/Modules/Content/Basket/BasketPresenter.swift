@@ -94,8 +94,8 @@ class BasketPresenter: BasketPresenterProtocol {
         else { return }
         let products: [String] = products.map { $0.elementID }
         let query = CreateOrderMutation(data: InputCreateOrder(customer: userID,
-                                                               price: totalViewModel.total,
-                                                               products: products))
+                                                               products: products,
+                                                               price: totalViewModel.total))
         network.mutateData(query: query, model: OrderModel.self) { [weak self] result in
             switch result {
             case .success(let orderModel):
@@ -107,6 +107,7 @@ class BasketPresenter: BasketPresenterProtocol {
 
             case .failure(let error):
                 self?.delegate.hideProgress(with: .error(error.localizedDescription))
+                self?.delegate?.isHiddenProducts(products.isEmpty)
             }
         }
     }

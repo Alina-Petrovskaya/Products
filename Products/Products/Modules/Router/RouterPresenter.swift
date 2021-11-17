@@ -39,13 +39,12 @@ class RouterPresenter: RouterPresenterProtocol {
 
     // MARK: - Private methods
     private func findUserByID(userID: String) {
-        let query = FindUserQuery(findUserData2: InputFindUser(email: nil, id: userID))
+        let query = FindUserQuery(findUserData2: InputFindUser(id: userID, email: nil))
         network.requestData(query: query,
                             model: UserModel.self) { [weak self] result in
             switch result {
             case .success(let model):
                 KeychainManager().save(data: model.token, for: .token)
-                self?.delegate.presentContent()
 
             case .failure(let error):
                 print(error)
@@ -56,13 +55,13 @@ class RouterPresenter: RouterPresenterProtocol {
 
     // MARK: - Public methods
     func checkAuthState() {
-        guard let tolen: String = KeychainManager().getData(for: .token),
+        guard let token: String = KeychainManager().getData(for: .token),
               let userID: String = KeychainManager().getData(for: .userID)
         else {
             delegate.presentAuth()
             return
         }
-
+        delegate.presentContent()
         findUserByID(userID: userID)
     }
 }

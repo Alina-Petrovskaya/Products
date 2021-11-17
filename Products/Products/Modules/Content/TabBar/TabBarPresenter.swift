@@ -29,6 +29,5 @@ class TabBarPresenter: TabBarPresenterProtocol {
     // MARK: - Private methods
 
     // MARK: - Public methods
-    func prepareItems() {
-    }
+
 }

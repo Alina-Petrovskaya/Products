@@ -9,7 +9,7 @@ import Foundation
 import Apollo
 
 // MARK: - GraphQlDefaultError
-enum GraphQlDefaultError: String, Error {
+enum GraphQlDefaultError: String, Error, CustomStringConvertible, LocalizedError {
     
     case noUserToken                = "Unable to get user token"
     case needToRefresh              = "Need to refresh"
@@ -20,6 +20,10 @@ enum GraphQlDefaultError: String, Error {
     case userNotFound               = "User not found"
     case validationError            = "Validation Error. Please check your"
     case userAlreadyExist           = "User with email already exists"
+    case noInternetConnection       = "It seems that you have problems with internet connection"
+
+    var description: String { rawValue }
+    var errorDescription: String? { description }
 
 }
 

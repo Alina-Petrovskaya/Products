@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - UserProfileViewController
-class UserProfileViewController: UIViewController, UserProfilePresenterDelegate, DiffableTableUpdateProtocol {
+class UserProfileViewController: UIViewController, UserProfilePresenterDelegate, DiffableTableUpdateProtocol, HudViewProtocol {
 
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: DiffableTableView!
@@ -21,10 +21,12 @@ class UserProfileViewController: UIViewController, UserProfilePresenterDelegate,
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        showHud("Loading...", to: view)
+        presenter.prepareTableView()
     }
 
     // MARK: - IBActions
-    @IBAction func logiutTapped(_ sender: CustomButton) {
+    @IBAction func logoutTapped(_ sender: CustomButton) {
         presenter.logout()
         navigationController?.popToRootViewController(animated: true)
     }
@@ -39,7 +41,7 @@ class UserProfileViewController: UIViewController, UserProfilePresenterDelegate,
 extension UserProfileViewController: OrderCreationDelegate {
 
     func newOrderCreated(model: BasketViewModel) {
-        
+        presenter.insertOrder(model: model)
     }
     
 }

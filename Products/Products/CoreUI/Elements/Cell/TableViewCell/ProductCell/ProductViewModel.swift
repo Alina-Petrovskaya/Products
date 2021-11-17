@@ -19,6 +19,7 @@ protocol ProductViewModelProtocol {
 class ProductViewModel: ProductViewModelProtocol, DiffableTableCellViewModel {
 
     // MARK: - Private properties
+    private var model: ProductModel
 
     // MARK: - Public properties
     var productID: String
@@ -32,6 +33,7 @@ class ProductViewModel: ProductViewModelProtocol, DiffableTableCellViewModel {
         self.title = model.name
         self.price = model.price
         self.image = nil
+        self.model = model
     }
 
     // MARK: - Private methods
@@ -41,6 +43,9 @@ class ProductViewModel: ProductViewModelProtocol, DiffableTableCellViewModel {
         hasher.combine(title)
         hasher.combine(price)
         hasher.combine(image)
+    }
+    
+    func getRemoveModel(isRemove: Bool) {
     }
 
     // MARK: - Static methods

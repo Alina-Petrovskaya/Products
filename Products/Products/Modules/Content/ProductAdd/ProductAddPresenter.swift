@@ -67,11 +67,12 @@ class ProductAddPresenter: ProductAddPresenterProtocol {
               let userID: String = KeychainManager().getData(for: .userID)
         else { delegate.hideProgress(with: .error("All fields should be filled")); return }
 
-        let productData = InputCreateProduct(amount: amount,
-                                             content:  productDescription ?? "",
-                                             creator: userID,
-                                             price: price,
-                                             title: name ?? "" )
+        let productData = InputCreateProduct(price: price,
+                                             title: name ?? "",
+                                             content: productDescription ?? "",
+                                             amount: amount,
+                                             creator: userID)
+        
         network.mutateData(query: CreateProductMutation(data: productData),
                            model: ProductModel.self) { [weak self] result in
             switch result {

@@ -36,7 +36,7 @@
                                             <constraint firstAttribute="height" constant="48" id="RwC-79-Ufn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage">
                                                 <imageReference key="value" image="envelope" catalog="system" symbolScale="default"/>
@@ -50,7 +50,7 @@
                                             <constraint firstAttribute="height" constant="48" id="HQ5-kP-XtG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage">
                                                 <imageReference key="value" image="lock" catalog="system" symbolScale="default"/>

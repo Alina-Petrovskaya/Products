@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-Ec-kD5" customClass="DiffableTableView" customModule="Products" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Ch-Ec-kD5" customClass="DiffableTableView" customModule="Products" customModuleProvider="target">
                                 <rect key="frame" x="30" y="44" width="354" height="718"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDF-rN-a9l" customClass="CustomButton" customModule="Products" customModuleProvider="target">
                                 <rect key="frame" x="30" y="782" width="354" height="60"/>
@@ -32,7 +31,7 @@
                                     <fontDescription key="titleFontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logiutTapped:" destination="0Pr-wL-o9c" eventType="touchUpInside" id="yuP-FY-gKb"/>
+                                    <action selector="logoutTapped:" destination="0Pr-wL-o9c" eventType="touchUpInside" id="b9n-mF-dqV"/>
                                 </connections>
                             </button>
                         </subviews>

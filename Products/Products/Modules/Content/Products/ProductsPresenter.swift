@@ -17,7 +17,7 @@ protocol ProductBuckedAddDelegate: AnyObject {
 
 // MARK: - ProductsPresenterDelegate
 protocol ProductsPresenterDelegate: AnyObject {
-
+    func showProgressHud()
     func hideProgress(with result: HudResult)
 
 }
@@ -77,17 +77,38 @@ class ProductsPresenter: ProductsPresenterProtocol {
             }
         }
     }
+    
+    private func deleteProduct(index: Int, completion: @escaping(Bool) -> Void) {
+        guard (products.count - 1) > index
+        else {
+            completion(false)
+            // error to hud
+            return
+        }
+        let item = products[index]
+
+//        network.mutateData(query: UpdateProductMutation(data: ) ) { [weak self] result in
+//            switch result {
+//            case .success:
+//                self?.products.remove(at: index)
+//                self?.delegate.delete(items: [item])
+//                self?.productBuckedAddDelegate?.productDeleted(model: item)
+//                completion(true)
+//                self?.delegate.hideProgress(with: .success)
+//
+//            case .failure(let error):
+//                self?.delegate.hideProgress(with: .error(error.localizedDescription))
+//                completion(false)
+//            }
+//        }
+    }
 
     // MARK: - Public methods
     func prepareTable() {
         let swipe = ProductSwipeConfigurator { [weak self] indexPath, isComplete in
-            if let item = self?.products.remove(at: indexPath.row) {
-                self?.delegate.delete(items: [item])
-                self?.productBuckedAddDelegate?.productDeleted(model: item)
-            }
-            isComplete(true)
+            self?.deleteProduct(index: indexPath.row, completion: isComplete)
         }
-
+        
         delegate.setup(with: ProductsTableViewConfigurator(delegate: self, swipes: [swipe]))
         updateTable()
         getProducts()

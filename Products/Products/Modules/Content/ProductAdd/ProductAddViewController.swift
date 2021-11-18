@@ -85,11 +85,7 @@ extension ProductAddViewController: ProductAddPresenterDelegate {
             break
 
         case .success:
-            productName.text        = ""
-            productImage.image      = nil
-            productPrice.text       = ""
-            productDescription.text = ""
-            amount.text             = ""
+            dismiss(animated: true)
         }
     }
 

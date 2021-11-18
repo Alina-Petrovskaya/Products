@@ -4,6 +4,7 @@ query FindUser($findUserData2: InputFindUser!) {
   findUser(data: $findUserData2) {
     id
     name
+    email
     access_token
   }
 }
@@ -12,6 +13,7 @@ query Login($loginData: InputLogin!) {
   login(data: $loginData) {
     id
     name
+    email
     access_token
   }
 }
@@ -27,6 +29,17 @@ query GetProductsUserId($data: InputID!) {
     title
   }
 }
+
+query FindOrders($data: InputOrderId!) {
+  
+  getOrdersUserId(data: $data) {
+    _id
+    price
+    create_at
+  }
+
+}
+
 
 query GetOrdersUserId($data: InputOrderId!, $findUserData2: InputFindUser!) {
 

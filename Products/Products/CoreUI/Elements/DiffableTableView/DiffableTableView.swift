@@ -51,6 +51,7 @@ class DiffableTableView: UITableView {
         for (index, section) in sections.enumerated() {
             snapshot.appendSections([index])
             snapshot.appendItems(section.cells, toSection: index)
+            
         }
         diffableDataSource.defaultRowAnimation = animation
 

@@ -53,7 +53,7 @@ struct OrderModel: Codable {
         do {
             orderID  = try safeContainer.decode(String.self, forKey: .orderID)
             let timeInterval = try safeContainer.decode(String.self, forKey: .date)
-            date = Date(timeIntervalSince1970: Double(timeInterval)!)
+            date = Date(timeIntervalSince1970: (Double(timeInterval) ?? 0.0) / 1000)
             totalSum = try safeContainer.decode(Double.self, forKey: .totalSum)
         } catch {
             throw error

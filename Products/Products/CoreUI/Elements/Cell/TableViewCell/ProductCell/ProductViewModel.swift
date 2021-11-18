@@ -9,10 +9,15 @@ import Foundation
 
 // MARK: - ProductViewModelProtocol
 protocol ProductViewModelProtocol {
+
     var productID: String { get }
     var title: String { get }
     var price: Double { get }
     var image: URL? { get }
+    var amount: Int { get }
+
+    func getUpdateModel(isRemove: Bool) -> InputUpdateProduct
+
 }
 
 // MARK: - ProductViewModel
@@ -26,14 +31,16 @@ class ProductViewModel: ProductViewModelProtocol, DiffableTableCellViewModel {
     var title: String
     var price: Double
     var image: URL?
+    var amount: Int
 
     // MARK: Life cycle
     init(model: ProductModel) {
         self.productID = model.productID
-        self.title = model.name
-        self.price = model.price
-        self.image = nil
-        self.model = model
+        self.title  = model.name
+        self.price  = model.price
+        self.image  = nil
+        self.model  = model
+        self.amount = model.amount
     }
 
     // MARK: - Private methods
@@ -45,7 +52,13 @@ class ProductViewModel: ProductViewModelProtocol, DiffableTableCellViewModel {
         hasher.combine(image)
     }
     
-    func getRemoveModel(isRemove: Bool) {
+    func getUpdateModel(isRemove: Bool) -> InputUpdateProduct {
+        InputUpdateProduct(id: model.productID ,
+                           price: model.price,
+                           title: model.name,
+                           content: model.description,
+                           amount: Double(amount),
+                           isRemove: isRemove)
     }
 
     // MARK: - Static methods

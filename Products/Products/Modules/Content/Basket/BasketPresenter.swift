@@ -45,8 +45,7 @@ class BasketPresenter: BasketPresenterProtocol {
     private weak var orderCreationDelegate: OrderCreationDelegate?
     private let network = NetworkManager()
     private var products: [BasketViewModel] = []
-
-    private var totalViewModel: OrderTotalViewModel = OrderTotalViewModel(total: 0.0)
+    private var totalViewModel: OrderTotalViewModel
 
     // MARK: - Public properties
 
@@ -55,32 +54,45 @@ class BasketPresenter: BasketPresenterProtocol {
                   orderCreationDelegate: OrderCreationDelegate?) {
         self.delegate              = delegate
         self.orderCreationDelegate = orderCreationDelegate
+        self.totalViewModel        = OrderTotalViewModel(total: 0.0)
     }
 
     // MARK: - Private methods
+    private func updateProductInfo() {
+        delegate?.isHiddenProducts(products.isEmpty)
+        totalViewModel.total = products.reduce(0) { $0 + ($1.price * $1.amount) }
+        delegate.reload(items: [totalViewModel])
+        updateProductCount()
+    }
+    
+    private func updateProductCount() {
+        delegate.updateNumberOfItems(products.reduce(0) { $0 + (1 * Int($1.amount)) })
+    }
 
     // MARK: - Public methods
     func prepareTable() {
         delegate?.isHiddenProducts(products.isEmpty)
-        delegate.setup(with: BasketTableViewConfigurator(delegate: self))
     }
 
     func prepareTableContent() {
         delegate?.isHiddenProducts(products.isEmpty)
-        delegate.updateNumberOfItems(products.count)
-        let prodSection      = DiffableTableSectionViewModel(cells: products)
-        totalViewModel = OrderTotalViewModel(total: products.reduce(0) { $0 + $1.price })
+        delegate.setup(with: BasketTableViewConfigurator(delegate: self))
+
+        totalViewModel.total = products.reduce(0) { $0 + ($1.price * $1.amount) }
         let totalSection     = DiffableTableSectionViewModel(cells: [totalViewModel])
+        let prodSection      = DiffableTableSectionViewModel(cells: products)
 
         delegate?.update(with: [prodSection, totalSection])
+        updateProductCount()
     }
 
     func addNewProduct(model: ProductViewModel) {
         if let index = products.firstIndex(where: { $0.elementID == model.productID }) {
+            products[index].increaseAmount()
         } else {
             products.append(BasketViewModel(productModel: model))
-            delegate.updateNumberOfItems(products.count)
         }
+        updateProductCount()
     }
 
     func deleteProduct(model: ProductViewModel) {
@@ -100,7 +112,7 @@ class BasketPresenter: BasketPresenterProtocol {
             switch result {
             case .success(let orderModel):
                 self?.products.removeAll()
-                self?.prepareTableContent()
+                self?.updateProductInfo()
                 self?.delegate.hideProgress(with: .success)
                 let model = BasketViewModel(orderModel: orderModel)
                 self?.orderCreationDelegate?.newOrderCreated(model: model)
@@ -118,9 +130,6 @@ extension BasketPresenter: BasketTableViewDelegate {
     func deleteButtonTapped(row: Int) {
         let item = products.remove(at: row)
         delegate?.delete(items: [item])
-        totalViewModel.total = products.reduce(0) { $0 + $1.price }
-        delegate?.reload(items: [totalViewModel])
-        delegate?.isHiddenProducts(products.isEmpty)
-        delegate.updateNumberOfItems(products.count)
+        updateProductInfo()
     }
 }

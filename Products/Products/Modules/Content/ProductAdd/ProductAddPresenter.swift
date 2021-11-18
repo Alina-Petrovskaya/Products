@@ -67,24 +67,31 @@ class ProductAddPresenter: ProductAddPresenterProtocol {
               let userID: String = KeychainManager().getData(for: .userID)
         else { delegate.hideProgress(with: .error("All fields should be filled")); return }
 
-        let productData = InputCreateProduct(price: price,
-                                             title: name ?? "",
-                                             content: productDescription ?? "",
-                                             amount: amount,
-                                             creator: userID)
-        
-        network.mutateData(query: CreateProductMutation(data: productData),
-                           model: ProductModel.self) { [weak self] result in
-            switch result {
-            case .success(let product):
-                self?.delegate.hideProgress(with: .success)
-                self?.productCreationDelegate?.newProductCreated(model: product)
+        let validationResult = ValidationService().validate([.productDescription(productDescription ?? "")])
 
-            case .failure(let error):
-                self?.delegate.hideProgress(with: .error(error.localizedDescription))
+        switch validationResult {
+        case .some(let errorMessage):
+            delegate.hideProgress(with: .error(errorMessage))
+        
+        case .none:
+            let productData = InputCreateProduct(price: price,
+                                                 title: name ?? "",
+                                                 content: productDescription ?? "",
+                                                 amount: amount,
+                                                 creator: userID)
+
+            network.mutateData(query: CreateProductMutation(data: productData),
+                               model: ProductModel.self) { [weak self] result in
+                switch result {
+                case .success(let product):
+                    self?.delegate.hideProgress(with: .success)
+                    self?.productCreationDelegate?.newProductCreated(model: product)
+
+                case .failure(let error):
+                    self?.delegate.hideProgress(with: .error(error.localizedDescription))
+                }
             }
         }
-        
-        
     }
+
 }

@@ -24,11 +24,7 @@ class ProductsViewController: UIViewController, ProductsPresenterDelegate, Diffa
         super.viewDidLoad()
         showHud("", to: view)
         presenter.prepareTable()
-        addProduct.setBackgroundGradient(addProduct.bounds.height / 2)
-        addProduct.layer.cornerRadius = addProduct.bounds.height / 2
         let shadowColor = ColorConstant.darkBlueBackground.getColor().withAlphaComponent(0.4)
-        addProduct.layer.shadowColor = shadowColor.cgColor
-        addProduct.layer.shadowRadius = 20
     }
 
     // MARK: - IBActions
@@ -41,7 +37,13 @@ class ProductsViewController: UIViewController, ProductsPresenterDelegate, Diffa
 
     // MARK: - Public methods
     func hideProgress(with result: HudResult) {
-        showResult(from: view, result: result)
+        switch result {
+        case .error:
+            showResult(from: view, result: result)
+        case .success:
+            dismissHud(from: view)
+        }
+        
     }
     
     func showProgressHud() {

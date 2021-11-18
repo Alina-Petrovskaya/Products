@@ -12,8 +12,8 @@ struct ListModel: Codable {
     
     // MARK: - CodingKeys
     enum CodingKeys: String, CodingKey {
-        case products  = "getProductsUserId"
-        case orders    = "getOrders"
+        case products     = "getProductsUserId"
+        case orders       = "getOrdersUserId"
     }
 
     // MARK: - Public properties

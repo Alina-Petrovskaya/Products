@@ -14,11 +14,13 @@ struct UserModel: Codable {
     let name: String
     let token: String
     let userId: String
+    let email: String
 
     // MARK: - CodingKeys
     enum CodingKeys: String, CodingKey {
         case userId  = "id"
         case name
+        case email
         case token   = "access_token"
     }
 
@@ -48,9 +50,10 @@ struct UserModel: Codable {
         else { throw GraphQlDefaultError.cantCreateDecoderContainer }
 
         do {
-            userId        = try safeContainer.decode(String.self, forKey: .userId)
-            token         = try safeContainer.decode(String.self, forKey: .token)
-            name          = try safeContainer.decode(String.self, forKey: .name)
+            userId = try safeContainer.decode(String.self, forKey: .userId)
+            token  = try safeContainer.decode(String.self, forKey: .token)
+            name   = try safeContainer.decode(String.self, forKey: .name)
+            email  = try safeContainer.decode(String.self, forKey: .email)
         } catch {
             throw error
         }

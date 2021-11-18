@@ -39,7 +39,7 @@ class BasketCell: UITableViewCell {
     // MARK: - Public methods
     func configure(with viewModel: BasketViewModelProtocol) {
         titleText.text    = viewModel.titleText
-        price.text        = "price: \(viewModel.price)"
+        price.text        = "price: \(viewModel.price) USD"
         productID.text    = viewModel.subtitle
         productImage.sd_setImage(with: viewModel.productImage,
                                  placeholderImage: productImage.image,

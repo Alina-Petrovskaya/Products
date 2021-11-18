@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -12,6 +13,9 @@
     <customFonts key="customFonts">
         <array key="Poppins-Bold.ttf">
             <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
         </array>
         <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
@@ -57,11 +61,11 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4G-yN-DsH" customClass="CustomButton" customModule="Products" customModuleProvider="target">
                                                                 <rect key="frame" x="115" y="0.0" width="124" height="124"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Add image">
-                                                                    <fontDescription key="titleFontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
-                                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </buttonConfiguration>
+                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Add image">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="addImageTapped:" destination="0Pr-wL-o9c" eventType="touchUpInside" id="T45-NQ-ujm"/>
                                                                 </connections>
@@ -95,7 +99,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage">
-                                                                <imageReference key="value" image="highlighter" catalog="system" symbolScale="default"/>
+                                                                <imageReference key="value" image="pencil" catalog="system" symbolScale="default"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -125,7 +129,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage">
-                                                                <imageReference key="value" image="list.star" catalog="system" symbolScale="default"/>
+                                                                <imageReference key="value" image="list.dash" catalog="system" symbolScale="default"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
@@ -133,7 +137,7 @@
                                                         <rect key="frame" x="0.0" y="328" width="354" height="290"/>
                                                         <color key="textColor" name="TextDarkGray"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" returnKeyType="done" smartDashesType="yes" smartInsertDeleteType="yes"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -142,11 +146,10 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="Exy-ij-a7W"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Create">
-                                                    <fontDescription key="titleFontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Create"/>
                                                 <connections>
                                                     <action selector="saveProduct:" destination="0Pr-wL-o9c" eventType="touchUpInside" id="zRx-X3-EF3"/>
                                                 </connections>
@@ -160,6 +163,7 @@
                                             <constraint firstItem="oG6-Js-Tfc" firstAttribute="leading" secondItem="E7B-pM-zjZ" secondAttribute="leading" constant="30" id="D7S-5d-Lk6"/>
                                             <constraint firstAttribute="trailing" secondItem="bDp-A2-RRc" secondAttribute="trailing" constant="30" id="Gsd-bk-g4Q"/>
                                             <constraint firstAttribute="trailing" secondItem="25o-Hc-8iV" secondAttribute="trailing" constant="30" id="Oug-cL-csu"/>
+                                            <constraint firstItem="rHH-Rd-Njd" firstAttribute="width" secondItem="E7B-pM-zjZ" secondAttribute="width" multiplier="0.299517" id="QcR-r3-qc9"/>
                                             <constraint firstItem="bDp-A2-RRc" firstAttribute="leading" secondItem="E7B-pM-zjZ" secondAttribute="leading" constant="30" id="coK-rp-fSB"/>
                                             <constraint firstItem="25o-Hc-8iV" firstAttribute="leading" secondItem="E7B-pM-zjZ" secondAttribute="leading" constant="30" id="eFa-dR-bO3"/>
                                             <constraint firstAttribute="trailing" secondItem="oG6-Js-Tfc" secondAttribute="trailing" constant="30" id="jh3-H7-dOg"/>
@@ -205,8 +209,8 @@
     </scenes>
     <resources>
         <image name="dollarsign.square" catalog="system" width="128" height="114"/>
-        <image name="highlighter" catalog="system" width="128" height="119"/>
-        <image name="list.star" catalog="system" width="128" height="94"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <namedColor name="TextDarkGray">
             <color red="0.48199999332427979" green="0.43500000238418579" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

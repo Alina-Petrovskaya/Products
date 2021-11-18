@@ -50,14 +50,13 @@ extension HudViewProtocol {
             
             switch result {
             case .error(let message):
-                hud.customView = UIImageView(image: UIImage(named: "xmark"))
+                hud.customView = UIImageView(image: UIImage(systemName: "xmark"))
                 hud.label.text = message
                 hud.label.numberOfLines = 5
                 animationDuratin = 3
                 
             case .success:
-                hud.customView = UIImageView(image: UIImage(named: "checkmark"))
-                hud.label.text = "Complete"
+                hud.customView = UIImageView(image: UIImage(systemName: "checkmark"))
             }
             
             hud.bezelView.layer.cornerRadius = 5

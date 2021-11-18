@@ -34,14 +34,17 @@ class UserProfileViewController: UIViewController, UserProfilePresenterDelegate,
     // MARK: - Private methods
 
     // MARK: - Public methods
-
+    func hideProgress(with result: HudResult) {
+        showResult(from: view, result: result)
+    }
 }
 
 // MARK: - OrderCreationDelegate
 extension UserProfileViewController: OrderCreationDelegate {
 
     func newOrderCreated(model: BasketViewModel) {
+        guard tableView != nil else { return }
         presenter.insertOrder(model: model)
     }
-    
+
 }

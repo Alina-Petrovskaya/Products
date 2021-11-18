@@ -72,7 +72,7 @@ class BasketTableViewConfigurator: DiffableTableDelegate {
     
     func updateHeaderHeight(_ tableView: UITableView, at section: Int) -> CGFloat {
         if section == 0 {
-            return UITableView.automaticDimension
+            return 1.0
         }
         return 0.0
     }

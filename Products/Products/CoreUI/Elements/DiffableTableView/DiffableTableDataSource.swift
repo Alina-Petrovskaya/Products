@@ -8,7 +8,9 @@
 import UIKit
 
     // MARK: - DiffableTableDataSource
-class DiffableTableDataSource: UITableViewDiffableDataSource<AnyHashable, AnyHashable>, UITableViewDelegate {
+class DiffableTableDataSource: UITableViewDiffableDataSource<AnyHashable, AnyHashable>,
+                               UITableViewDelegate,
+                               UITableViewDataSourcePrefetching {
 
     // MARK: - Private properties
     private weak var delegate: DiffableTableDelegate?
@@ -27,7 +29,7 @@ class DiffableTableDataSource: UITableViewDiffableDataSource<AnyHashable, AnyHas
             viewModel.handler(indexPath, completion)
         }
         action.backgroundColor = viewModel.backgroundColor
-        action.image = viewModel.image
+        action.image           = viewModel.image
 
         return action
     }
@@ -35,6 +37,10 @@ class DiffableTableDataSource: UITableViewDiffableDataSource<AnyHashable, AnyHas
     // MARK: - Public methods
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         delegate?.configureHeader(for: tableView, in: section)
+    }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        delegate?.prefetchData(tableView, prefetchRowsAt: indexPaths)
     }
     
     func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
@@ -56,7 +62,19 @@ class DiffableTableDataSource: UITableViewDiffableDataSource<AnyHashable, AnyHas
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegate?.scrollViewDidScroll(scrollView)
+    }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelectRow(at: indexPath)
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return delegate?.canEdit(tableView, at: indexPath) ?? false
+    }
+    
     func tableView(_ tableView: UITableView,
                    leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
@@ -87,13 +105,5 @@ class DiffableTableDataSource: UITableViewDiffableDataSource<AnyHashable, AnyHas
         }
 
         return UISwipeActionsConfiguration(actions: actions)
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        delegate?.scrollViewDidScroll(scrollView)
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectRow(at: indexPath)
     }
 }

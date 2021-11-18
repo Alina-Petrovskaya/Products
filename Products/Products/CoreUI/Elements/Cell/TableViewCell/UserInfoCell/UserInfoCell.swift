@@ -12,7 +12,7 @@ class UserInfoCell: UITableViewCell {
 
     // MARK: - IBOutlets
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userID: UILabel!
+    @IBOutlet weak var email: UILabel!
     @IBOutlet weak var totalOrders: UILabel!
 
     // MARK: - Private properties
@@ -31,7 +31,7 @@ class UserInfoCell: UITableViewCell {
     // MARK: - Public methods
     func configure(with viewModel: UserInfoViewModelProtocol) {
         userName.text = viewModel.userName
-        userID.text = viewModel.userID
+        email.text = viewModel.email
         totalOrders.text = "Total orders count: \(viewModel.totalOrders)"
     }
 

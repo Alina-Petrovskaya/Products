@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FooterIndicatorView" customModule="calme" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nZT-4V-BIL">
+                    <rect key="frame" x="0.0" y="10" width="400" height="180"/>
+                    <color key="color" name="TextField Underline BEC2C2"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="nZT-4V-BIL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="323-L1-MEO"/>
+                <constraint firstItem="nZT-4V-BIL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="eda-zU-9SY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nZT-4V-BIL" secondAttribute="trailing" id="fhF-iJ-0C7"/>
+                <constraint firstAttribute="bottom" secondItem="nZT-4V-BIL" secondAttribute="bottom" priority="999" constant="10" id="lhg-X4-se9"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="307.03125"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TextField Underline BEC2C2">
+            <color red="0.74500000476837158" green="0.76099997758865356" blue="0.76099997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

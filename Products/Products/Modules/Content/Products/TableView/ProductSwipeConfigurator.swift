@@ -13,10 +13,10 @@ class ProductSwipeConfigurator: DiffableTableSwipeViewModel {
     // MARK: - Private properties
     var alignment: DiffableTableSwipeAlignment = .trailing
     var style: UIContextualAction.Style = .destructive
-    var title: String? = "Delete Product"
+    var title: String? = ""
     var backgroundColor: UIColor = .white
     var textColor: UIColor = ColorConstant.darkBlueBackground.getColor()
-    var image: UIImage? = nil //UIImage(named: "DeleteButton")
+    var image: UIImage? = UIImage(named: "DeleteButton")
     var handler: (IndexPath, @escaping (Bool) -> Void) -> Void
     
     // MARK: - Public properties

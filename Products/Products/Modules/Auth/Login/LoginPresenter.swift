@@ -39,7 +39,7 @@ class LoginPresenter: LoginPresenterProtocol {
 
     // MARK: - Public methods
     func login(email: String?, pass: String?) {
-        let validationResult = AuthValidationService().validate([
+        let validationResult = ValidationService().validate([
             .email(email ?? ""),
             .password(pass ?? "")])
 

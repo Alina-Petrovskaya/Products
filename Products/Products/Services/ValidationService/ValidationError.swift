@@ -15,7 +15,7 @@ enum ValidationError: String, Error, LocalizedError, CustomStringConvertible {
     case shortName           = "Short name"
     case shortDescription    = "Description must be longer than or equal to 10 characters"
     case shortTitle          = "Short title"
-    
+
     var description: String { rawValue }
     var errorDescription: String? { description }
 

@@ -39,7 +39,7 @@ class SignInPresenter: SignInPresenterProtocol {
 
     // MARK: - Public methods
     func createUser(name: String?, login: String?, password: String?) {
-        let validationResult = AuthValidationService().validate([
+        let validationResult = ValidationService().validate([
             .email(login ?? ""),
             .name(name ?? ""),
             .password(password ?? "")])

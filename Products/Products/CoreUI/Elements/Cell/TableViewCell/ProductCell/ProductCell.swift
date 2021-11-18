@@ -17,7 +17,8 @@ class ProductCell: UITableViewCell {
     @IBOutlet private weak var productImage: UIImageView!
     @IBOutlet private weak var roundedBackground: UIView!
     @IBOutlet private weak var byeButton: UIButton!
-
+    @IBOutlet private weak var amount: UILabel!
+    
     // MARK: - Private properties
     private var isSetGradient = false
 
@@ -59,7 +60,7 @@ class ProductCell: UITableViewCell {
     // MARK: - Public methods
     func configure(with viewModel: ProductViewModelProtocol) {
         titleText.text = viewModel.title
-        price.text = "\(viewModel.price)"
+        price.text = "Price: \(viewModel.price)"
         productImage.sd_setImage(with: viewModel.image,
                                  placeholderImage: productImage.image,
                                  options: [],

@@ -49,7 +49,7 @@ struct GraphQlCustomError: Error, CustomStringConvertible, LocalizedError {
         message     = (graphQlError["messages"] as? String) ?? "Ooops... Something wrong"
         errorCode   = (graphQlError["status"] as? String) ?? ""
         
-        var descriptionMessage = message
+        var descriptionMessage = message.contains("E11000 duplicate") ? "Product created before" : message
         let path = (graphQlError["path"] as? [String]) ?? []
         if !path.isEmpty {
             let pathString = path.joined(separator: ", ")

@@ -34,7 +34,7 @@ class CustomButton: UIButton {
             shadowLayer.shadowRadius  = 22
             shadowLayer.masksToBounds = true
             shadowLayer.cornerRadius  = bounds.height / 2
-            
+            shadowLayer.shadowPath = UIBezierPath(rect: bounds).cgPath
             layer.insertSublayer(shadowLayer, at: 0)
         }
     }

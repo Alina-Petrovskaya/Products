@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -72,15 +73,14 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="999" horizontalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctw-ey-ZxT">
-                                <rect key="frame" x="311" y="40" width="24" height="24"/>
+                                <rect key="frame" x="311" y="40.5" width="24" height="23"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ctw-ey-ZxT" secondAttribute="height" multiplier="1:1" id="agg-e4-MIf"/>
+                                    <constraint firstAttribute="width" constant="24" id="CrX-UO-N95"/>
+                                    <constraint firstAttribute="height" constant="24" id="P0U-Q6-XDC"/>
                                 </constraints>
                                 <color key="tintColor" name="TextDarkGray"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="xmark.circle" catalog="system"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="xmark.circle" catalog="system"/>
                                 <connections>
                                     <action selector="deleteProductTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xme-pi-caN"/>
                                 </connections>

@@ -364,6 +364,7 @@ public final class FindUserQuery: GraphQLQuery {
         __typename
         id
         name
+        email
         access_token
       }
     }
@@ -417,6 +418,7 @@ public final class FindUserQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("email", type: .nonNull(.scalar(String.self))),
           GraphQLField("access_token", type: .nonNull(.scalar(String.self))),
         ]
       }
@@ -427,8 +429,8 @@ public final class FindUserQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID, name: String, accessToken: String) {
-        self.init(unsafeResultMap: ["__typename": "FindUser", "id": id, "name": name, "access_token": accessToken])
+      public init(id: GraphQLID, name: String, email: String, accessToken: String) {
+        self.init(unsafeResultMap: ["__typename": "FindUser", "id": id, "name": name, "email": email, "access_token": accessToken])
       }
 
       public var __typename: String {
@@ -458,6 +460,15 @@ public final class FindUserQuery: GraphQLQuery {
         }
       }
 
+      public var email: String {
+        get {
+          return resultMap["email"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "email")
+        }
+      }
+
       public var accessToken: String {
         get {
           return resultMap["access_token"]! as! String
@@ -479,6 +490,7 @@ public final class LoginQuery: GraphQLQuery {
         __typename
         id
         name
+        email
         access_token
       }
     }
@@ -532,6 +544,7 @@ public final class LoginQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("email", type: .nonNull(.scalar(String.self))),
           GraphQLField("access_token", type: .nonNull(.scalar(String.self))),
         ]
       }
@@ -542,8 +555,8 @@ public final class LoginQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID, name: String, accessToken: String) {
-        self.init(unsafeResultMap: ["__typename": "User", "id": id, "name": name, "access_token": accessToken])
+      public init(id: GraphQLID, name: String, email: String, accessToken: String) {
+        self.init(unsafeResultMap: ["__typename": "User", "id": id, "name": name, "email": email, "access_token": accessToken])
       }
 
       public var __typename: String {
@@ -570,6 +583,15 @@ public final class LoginQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var email: String {
+        get {
+          return resultMap["email"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "email")
         }
       }
 
@@ -738,6 +760,121 @@ public final class GetProductsUserIdQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "title")
+        }
+      }
+    }
+  }
+}
+
+public final class FindOrdersQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query FindOrders($data: InputOrderId!) {
+      getOrdersUserId(data: $data) {
+        __typename
+        _id
+        price
+        create_at
+      }
+    }
+    """
+
+  public let operationName: String = "FindOrders"
+
+  public var data: InputOrderId
+
+  public init(data: InputOrderId) {
+    self.data = data
+  }
+
+  public var variables: GraphQLMap? {
+    return ["data": data]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("getOrdersUserId", arguments: ["data": GraphQLVariable("data")], type: .nonNull(.list(.nonNull(.object(GetOrdersUserId.selections))))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(getOrdersUserId: [GetOrdersUserId]) {
+      self.init(unsafeResultMap: ["__typename": "Query", "getOrdersUserId": getOrdersUserId.map { (value: GetOrdersUserId) -> ResultMap in value.resultMap }])
+    }
+
+    public var getOrdersUserId: [GetOrdersUserId] {
+      get {
+        return (resultMap["getOrdersUserId"] as! [ResultMap]).map { (value: ResultMap) -> GetOrdersUserId in GetOrdersUserId(unsafeResultMap: value) }
+      }
+      set {
+        resultMap.updateValue(newValue.map { (value: GetOrdersUserId) -> ResultMap in value.resultMap }, forKey: "getOrdersUserId")
+      }
+    }
+
+    public struct GetOrdersUserId: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Order"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("_id", type: .scalar(String.self)),
+          GraphQLField("price", type: .nonNull(.scalar(Double.self))),
+          GraphQLField("create_at", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(_id: String? = nil, price: Double, createAt: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Order", "_id": _id, "price": price, "create_at": createAt])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var _id: String? {
+        get {
+          return resultMap["_id"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "_id")
+        }
+      }
+
+      public var price: Double {
+        get {
+          return resultMap["price"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "price")
+        }
+      }
+
+      public var createAt: String? {
+        get {
+          return resultMap["create_at"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "create_at")
         }
       }
     }

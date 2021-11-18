@@ -28,6 +28,7 @@ class BasketViewController: UIViewController, BasketPresenterDelegate, DiffableT
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard tableView != nil else { return }
         presenter.prepareTableContent()
     }
 
@@ -42,7 +43,6 @@ class BasketViewController: UIViewController, BasketPresenterDelegate, DiffableT
 
     // MARK: - Public methods
     func isHiddenProducts(_ isHiddenTable: Bool) {
-        print(isHiddenTable)
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut,
                        animations: { [weak self] in
             self?.noProductsView.alpha = !isHiddenTable ? 0 : 1
@@ -54,7 +54,6 @@ class BasketViewController: UIViewController, BasketPresenterDelegate, DiffableT
             self?.buyButton.isHidden      = isHiddenTable
             self?.tableView.isHidden      = isHiddenTable
         })
-        
     }
 
     func hideProgress(with result: HudResult) {
@@ -74,6 +73,7 @@ class BasketViewController: UIViewController, BasketPresenterDelegate, DiffableT
 extension BasketViewController: ProductBuckedAddDelegate {
 
     func productDeleted(model: ProductViewModel) {
+        guard tableView != nil else { return }
         presenter.deleteProduct(model: model)
     }
 

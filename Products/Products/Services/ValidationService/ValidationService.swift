@@ -1,5 +1,5 @@
 //
-//  AuthValidationService.swift
+//  ValidationService.swift
 //  Products
 //
 //  Created by Alina Petrovskaya on 10.11.2021.
@@ -16,11 +16,12 @@ enum AuthValidationType {
     case email(String)
     case password(String)
     case name(String)
+    case productDescription(String)
 
 }
 
 // MARK: - ValidationSercice
-class AuthValidationService {
+class ValidationService {
     
     // MARK: - Private properties
 
@@ -59,6 +60,13 @@ class AuthValidationService {
                 return .success(true)
             } else {
                 return .failure(.shortName)
+            }
+            
+        case .productDescription(let text):
+            if text.count >= 10 {
+                return .success(true)
+            } else {
+                return .failure(.shortDescription)
             }
         }
     }

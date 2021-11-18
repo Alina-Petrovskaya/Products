@@ -31,8 +31,8 @@ class TabBarConfigurator: TabBarConfiguratorProtocol {
 
         let productsVC = ProductsConfigurator().configure(productBuckedAddDelegate: basketVC)
         productsVC.tabBarItem = UITabBarItem(title: "",
-                                             image: UIImage(systemName: "shippingbox"),
-                                             selectedImage: UIImage(systemName: "shippingbox.fill"))
+                                             image: UIImage(systemName: "bag"),
+                                             selectedImage: UIImage(systemName: "bag.fill"))
 
         return [productsVC, basketVC, userVC]
     }

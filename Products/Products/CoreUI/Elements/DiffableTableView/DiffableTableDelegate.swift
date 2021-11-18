@@ -35,6 +35,10 @@ protocol DiffableTableDelegate: AnyObject {
     func updateHeaderHeight(_ tableView: UITableView, at section: Int) -> CGFloat
     
     func updateEditing(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath)
+    
+    func prefetchData(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath])
+    
+    func canEdit(_ tableView: UITableView, at indexPath: IndexPath) -> Bool
 
 }
 
@@ -44,7 +48,11 @@ extension DiffableTableDelegate {
                          in section: Int) -> UIView? { nil }
 
     func configureFooter(for tableView: UITableView,
-                         in section: Int) -> UIView? { nil }
+                         in section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }
 
     func configureSwipe(for tableView: UITableView,
                         at indexPath: IndexPath,
@@ -57,6 +65,10 @@ extension DiffableTableDelegate {
     func updateHeaderHeight(_ tableView: UITableView, at section: Int) -> CGFloat { 0.0 }
     
     func updateEditing(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) { }
+    
+    func prefetchData(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) { }
+    
+    func canEdit(_ tableView: UITableView, at indexPath: IndexPath) -> Bool { false }
 
 }
 

@@ -8,10 +8,20 @@
 import Foundation
 import UIKit
 
+// MARK: - name
+protocol UserTableViewDelegate: AnyObject {
+
+    func getNewOrders(isStopQueryNewOrders: @escaping (Bool) -> Void)
+
+}
+
 // MARK: - UserTableViewConfigurator
 class UserTableViewConfigurator: DiffableTableDelegate {
 
     // MARK: - Private properties
+    private var isLoading            = false
+    private var isStopQueryNewOrders = false
+    private weak var delegate: UserTableViewDelegate?
     
     // MARK: - Public properties
     var cells: [UITableViewCell.Type]               = [UserInfoCell.self, BasketCell.self]
@@ -19,7 +29,10 @@ class UserTableViewConfigurator: DiffableTableDelegate {
     var footers: [UITableViewHeaderFooterView.Type] = []
 
     // MARK: - Life cycle
-    
+    init(delegate: UserTableViewDelegate) {
+        self.delegate = delegate
+    }
+
     // MARK: - Private methods
     
     // MARK: - Public methods
@@ -30,6 +43,7 @@ class UserTableViewConfigurator: DiffableTableDelegate {
             if let safeModel = viewModel as? UserInfoViewModel {
                 cell?.configure(with: safeModel)
             }
+
             return cell ?? UITableViewCell()
             
         default:
@@ -56,8 +70,25 @@ class UserTableViewConfigurator: DiffableTableDelegate {
         return view
     }
     
-    func updateHeaderHeight(_ tableView: UITableView, at section: Int) -> CGFloat {
-        return UITableView.automaticDimension
+    func updateHeaderHeight(_ tableView: UITableView, at section: Int) -> CGFloat { 1.0 }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard !isStopQueryNewOrders, !isLoading, let tableView = scrollView as? UITableView
+        else { return }
+
+        let tableHeight = tableView.contentSize.height
+        let position    = scrollView.contentOffset.y
+
+
+        if position > (tableHeight - scrollView.frame.size.height) {
+            isLoading = true
+            tableView.tableFooterView = FooterIndicatorView(frame: .zero)
+            delegate?.getNewOrders { [weak self] isStopQueryNewOrders in
+                tableView.tableFooterView  = nil
+                self?.isStopQueryNewOrders = isStopQueryNewOrders
+                self?.isLoading            = false
+            }
+        }
     }
 
 }

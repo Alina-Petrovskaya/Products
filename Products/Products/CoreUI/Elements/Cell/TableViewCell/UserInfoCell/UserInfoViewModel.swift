@@ -11,7 +11,7 @@ import Foundation
 protocol UserInfoViewModelProtocol {
 
     var userName: String { get }
-    var userID: String { get }
+    var email: String { get }
     var totalOrders: Int { get }
 
 }
@@ -21,7 +21,7 @@ class UserInfoViewModel: UserInfoViewModelProtocol, DiffableTableCellViewModel {
 
     // MARK: - Private properties
     var userName: String
-    var userID: String
+    var email: String
     var totalOrders: Int
 
     // MARK: - Public properties
@@ -29,7 +29,7 @@ class UserInfoViewModel: UserInfoViewModelProtocol, DiffableTableCellViewModel {
     // MARK: Life cycle
     init(model: UserModel, totalOrders: Int) {
         self.userName    = model.name
-        self.userID      = model.userId
+        self.email      = model.email
         self.totalOrders = totalOrders
     }
 
@@ -38,14 +38,14 @@ class UserInfoViewModel: UserInfoViewModelProtocol, DiffableTableCellViewModel {
     // MARK: - Public methods
     func hash(into hasher: inout Hasher) {
         hasher.combine(userName)
-        hasher.combine(userID)
+        hasher.combine(email)
         hasher.combine(totalOrders)
     }
 
     // MARK: - Static methods
     static func == (lhs: UserInfoViewModel, rhs: UserInfoViewModel) -> Bool {
         lhs.userName       == rhs.userName
-        && lhs.userID      == rhs.userID
+        && lhs.email      == rhs.email
         && lhs.totalOrders == rhs.totalOrders
     }
 
